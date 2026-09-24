@@ -1,0 +1,3 @@
+__pycache__/
+*.pyc
+captures/_orig_wxapkg/*.wxapkg

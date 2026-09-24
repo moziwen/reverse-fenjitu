@@ -1,0 +1,14 @@
+.tui-list-cell{box-sizing:border-box;position:relative;width:100%}
+.tui-radius{border-radius:3px;overflow:hidden}
+.tui-cell-hover{background-color:#f1f1f1!important}
+.tui-list-cell::after{border-bottom:1px solid #eaeef1;bottom:0;content:"";left:0;position:absolute;right:0;-webkit-transform:scaleY(.5) translateZ(0);transform:scaleY(.5) translateZ(0);-webkit-transform-origin:0 100%;transform-origin:0 100%}
+.tui-line-left::after{left:15px!important}
+.tui-line-right::after{right:15px!important}
+.tui-cell-unlined::after{border-bottom:0!important}
+.tui-cell-arrow::before{border-color:silver;border-style:solid;border-width:2px 2px 0 0;content:" ";height:10px;margin-top:-6px;position:absolute;right:15px;top:50%;-webkit-transform:matrix(.5,.5,-.5,.5,0,0);transform:matrix(.5,.5,-.5,.5,0,0);width:10px}
+.tui-arrow-right::before{right:0!important}
+.tui-arrow-gray::before{border-color:#666!important}
+.tui-arrow-white::before{border-color:#fff!important}
+.tui-arrow-warning::before{border-color:#ff7900!important}
+.tui-arrow-success::before{border-color:#19be6b!important}
+.tui-arrow-danger::before{border-color:#eb0909!important}

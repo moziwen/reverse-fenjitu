@@ -1,0 +1,16 @@
+.header-card{background-color:#07c160;border-radius:6px;display:-webkit-flex;display:flex;margin-bottom:15px;padding:20px 0}
+.header-card .card-item{-webkit-align-items:center;align-items:center;color:#fff;display:-webkit-flex;display:flex;-webkit-flex:1;flex:1;-webkit-flex-direction:column;flex-direction:column;position:relative}
+.header-card .card-item:first-child::after{background-color:hsla(0,0%,100%,.2);content:"";height:60%;position:absolute;right:0;top:20%;width:0.5px}
+.header-card .card-item .icon{height:30px;margin-bottom:5px;opacity:.9;width:30px}
+.header-card .card-item .label{font-size:14px;margin-bottom:5px}
+.header-card .card-item .value{font-size:18px;font-weight:700}
+.tui-popup-scroll{font-size:13px;height:400px}
+.tui-modal-custom{text-align:center}
+.tui-prompt-title{font-size:17px;padding-bottom:10px}
+.tui-modal-input{border-bottom:0.5px solid #e6e6e6;font-size:16px;margin:15px auto 25px;width:80%}
+.tui-hidden-input{width:0}
+.tui-page__hd{box-sizing:border-box;padding:5px;width:100%}
+.tui-page__bd{margin-top:20px;padding-bottom:40px}
+.tui-page__title{font-size:20px;font-weight:400;text-align:left}
+.tui-page__desc{color:#888;font-size:13px;margin-top:15px;text-align:left}
+.input-title{-webkit-flex-shrink:0;flex-shrink:0;min-width:60px;padding-right:6px}

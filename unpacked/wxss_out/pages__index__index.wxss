@@ -1,0 +1,55 @@
+.container{padding-bottom:env(safe-area-inset-bottom)}
+.tab{width:14%}
+::-webkit-scrollbar{color:transparent;height:0;width:0}
+.tui-header{-webkit-align-items:center;align-items:center;font-size:18px;font-weight:500;-webkit-justify-content:center;justify-content:center;line-height:18px;width:100%}
+.tui-header,.tui-header-icon{display:-webkit-flex;display:flex;height:32px}
+.tui-header-icon{-webkit-align-items:flex-start;align-items:flex-start;-webkit-justify-content:space-between;justify-content:space-between;left:30px;top:0;-webkit-transform:translateZ(0);transform:translateZ(0);z-index:999}
+.tui-header-box{left:0;position:fixed;top:0;width:100%;z-index:998}
+.tui-header1{-webkit-align-items:flex-start;align-items:flex-start}
+.tui-header1,.tui-tabs{display:-webkit-flex;display:flex}
+.tui-tabs{-webkit-flex:1;flex:1;-webkit-flex-direction:column;flex-direction:column;overflow:hidden;position:relative}
+.tui-scroll-h{background-color:#fff;box-sizing:border-box;padding:8px 0;white-space:nowrap;width:100%}
+.tui-tab-item{display:inline-block;padding:0 6px}
+.tui-tab-item-title{background-color:#f5f6f7;border-radius:50px;color:#666;display:inline-block;font-size:16px;font-weight:500;min-width:30px;padding:5px 16px;text-align:center;transition:all .2s ease}
+.tui-tab-item-title-active{background-color:#ff9b6a!important;box-shadow:0 3px 8px rgba(255,152,0,.35);color:#fff!important;font-weight:700!important;-webkit-transform:scale(1.05);transform:scale(1.05)}
+.image{width:100%}
+.tui-new-label{height:32px;position:absolute;right:0;top:0;width:32px}
+.tui-new-label-free{left:0px}
+.tui-new-label-free,.tui-new-label-text{-webkit-align-items:center;align-items:center;border-radius:12%;display:-webkit-flex;display:flex;height:17px;-webkit-justify-content:center;justify-content:center;position:absolute;top:0px;width:28px}
+.tui-new-label-text{right:0px}
+.tui-new-label-text-ibhs{-webkit-align-items:center;align-items:center;border-radius:12%;display:-webkit-flex;display:flex;height:17px;-webkit-justify-content:center;justify-content:center;position:absolute;right:0px;top:0px;width:64px}
+.tui-new-label-progress{bottom:0px;display:-webkit-inline-flex;display:inline-flex;height:8px;left:0px;opacity:.8;position:absolute;width:100%}
+.quiz-progress,.title-bar{left:0;position:relative;top:0}
+.quiz-progress{height:5px;width:100%}
+.quiz-progress wx-text{-webkit-align-items:center;align-items:center;color:var(--black);display:-webkit-flex;display:flex;font-size:10px;text-indent:5px}
+.tui-search-text{padding-left:8px}
+.tui-icon{background:rgba(0,0,0,.5);border-radius:50%;padding:13px}
+.tui-active{color:#ff9b6a}
+.tui-active.cur{border-bottom:2px solid;line-height:45px}
+.tui-title-bold{-webkit-flex-shrink:0;flex-shrink:0;font-size:13px;font-weight:700}
+.tui-icon-box0{-webkit-align-items:center;align-items:center;background-color:rgba(0,0,0,.2);border-radius:20px;box-sizing:border-box;display:-webkit-flex;display:flex;height:30px;-webkit-justify-content:center;justify-content:center;padding:0 6px;position:relative;top:0;-webkit-transform:translateZ(0);transform:translateZ(0);width:65px;z-index:999}
+.tui-icon-box1{background-color:#d3d3d3;width:65px}
+.tui-icon-box1,.tui-icon-box2{-webkit-align-items:center;align-items:center;border-radius:20px;box-shadow:0 2px 4px rgba(0,0,0,.05);box-sizing:border-box;display:-webkit-flex;display:flex;height:30px;-webkit-justify-content:center;justify-content:center;left:10px;margin-right:10px;padding:0 6px;position:relative;top:0;-webkit-transform:translateZ(0);transform:translateZ(0);z-index:999}
+.tui-icon-box2{background-color:#585858;width:75px}
+.tui-icon-box3{-webkit-align-items:center;align-items:center;background-color:#dcdcdc;border-radius:20px;box-shadow:0 2px 4px rgba(0,0,0,.05);box-sizing:border-box;display:-webkit-flex;display:flex;height:30px;-webkit-justify-content:center;justify-content:center;left:10px;margin-right:10px;padding:0 6px;position:relative;top:0;-webkit-transform:translateZ(0);transform:translateZ(0);width:38px;z-index:999}
+.header-text{color:#282828;font-size:13px;font-weight:520;margin-left:4px}
+.icon-grid{height:21px;width:21px}
+.tui-attr-box{box-sizing:border-box;font-size:0;margin-bottom:5px;width:100%}
+.tui-attr-item{-webkit-align-items:center;align-items:center;background:#fcedea;border:0.5px solid #fcedea;border-radius:16px;box-sizing:border-box;display:-webkit-inline-flex;display:inline-flex;font-size:16px;height:40px;-webkit-justify-content:center;justify-content:center;margin:6px;max-width:100%;min-width:66%;padding:10 10px}
+.tui-attr-item wx-text{font-weight:700;padding-left:6px}
+.tui-attr-active{background:#fcedea!important;color:#e41f19;font-weight:700;position:relative}
+.tui-attr-active::after{border:0.5px solid #e41f19;border-radius:20px;content:"";height:100%;left:0;position:absolute;top:0;width:100%}
+.card-shadow{box-shadow:0 2px 4px rgba(0,0,0,.05)}
+.pay-dialog{background-color:#f8f8f8;border-radius:5px;margin-left:auto;margin-right:auto;overflow:hidden;text-align:center;width:80%}
+.tui-text{font-size:15px;padding-left:6px}
+.tui-gray{color:#999}
+.tui-original-price{font-size:13px}
+.tui-modal-custom{text-align:center}
+.tui-prompt-title{font-size:17px;font-weight:700;padding-bottom:10px}
+.tui-modal-input{border-bottom:0.5px solid #e6e6e6;font-size:16px;margin:15px auto 30px;padding-bottom:5px;width:80%}
+.tui-hidden-input{width:0}
+.tui-modal-custom-text{color:#333;font-size:15px;padding:15px 0}
+.timedown{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center}
+.tui-red{color:#f71b1b}
+.tui-original-price{box-sizing:border-box;font-size:16px;line-height:13px;padding:5px}
+.tui-line-through{text-decoration:line-through}

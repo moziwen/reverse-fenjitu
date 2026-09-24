@@ -1,0 +1,19 @@
+.tui-steps-box{display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center;width:100%}
+.tui-steps-column{-webkit-flex-direction:column;flex-direction:column}
+.tui-step-ico{border-radius:50%;border-style:solid;border-width:0.5px;display:-webkit-inline-flex;display:inline-flex;-webkit-flex-shrink:0;flex-shrink:0;-webkit-justify-content:center;justify-content:center;margin:0 auto;position:relative;z-index:3}
+.tui-step-ico,.tui-step-row_ico{-webkit-align-items:center;align-items:center}
+.tui-step-column_ico{-webkit-align-items:flex-start;align-items:flex-start}
+.tui-step-line{border-top-width:0.5px;height:0px;left:50%;position:absolute;top:10px;-webkit-transform:translateY(-50%) translateZ(0);transform:translateY(-50%) translateZ(0);width:100%;z-index:2}
+.tui-step-row_item_main{text-align:center}
+.tui-step-item{box-sizing:border-box;font-size:12px;position:relative}
+.tui-step-item-ico{height:18px}
+.tui-step-custom,.tui-step-item-ico{display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center}
+.tui-step-custom{-webkit-align-items:center;align-items:center;height:20px;margin:0 auto;position:relative;width:24px;z-index:4}
+.tui-step-img{height:20px;width:20px}
+.tui-step-item-main{clear:both;margin-top:8px}
+.tui-step-item-title{word-break:break-all}
+.tui-step-item-content{margin-top:4px;word-break:break-all}
+.tui-step-vertical{display:-webkit-flex;display:flex;padding-bottom:30px;width:100%}
+.tui-step-column_item_main{margin-top:0;padding-left:10px}
+.tui-step-column_line{border-right-width:0.5px;height:100%;left:9px;margin:0;position:absolute;top:0;-webkit-transform:none!important;transform:none!important;width:0px}
+.tui-custom-left{left:10px!important}

@@ -1,0 +1,12 @@
+.tui-grid{background:#fff;box-sizing:border-box;float:left;padding:20px 10px;position:relative}
+.tui-grid-2{width:50%}
+.tui-grid-3{width:33.333333333%}
+.tui-grid-4{width:25%}
+.tui-grid-5{width:20%}
+.tui-grid-2:nth-of-type(2n)::before,.tui-grid-3:nth-of-type(3n)::before,.tui-grid-4:nth-of-type(4n)::before,.tui-grid-5:nth-of-type(5n)::before{border-right:0;width:0}
+.tui-grid::before{border-right:1px solid #eaeef1;bottom:0;content:" ";position:absolute;right:0;top:0;-webkit-transform:scaleX(.5);transform:scaleX(.5);-webkit-transform-origin:100% 0;transform-origin:100% 0;width:1px}
+.tui-grid__unlined::before{border-right:0!important;width:0!important}
+.tui-grid::after{border-bottom:1px solid #eaeef1;bottom:0;content:" ";height:1px;left:0;position:absolute;right:0;-webkit-transform:scaleY(.5);transform:scaleY(.5);-webkit-transform-origin:0 100%;transform-origin:0 100%}
+.tui-grid-bottom::after{border-bottom:0!important;height:0!important}
+.tui-grid-bg{box-sizing:border-box;padding:0;position:relative;width:100%}
+.tui-item-hover{background-color:#f7f7f9!important}

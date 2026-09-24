@@ -1,0 +1,13 @@
+.tui-countdown-box,.tui-countdown-item{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex}
+.tui-countdown-item{border:0.5px solid;border-radius:3px;-webkit-justify-content:center;justify-content:center;padding:1px;-webkit-transform:translateZ(0);transform:translateZ(0);white-space:nowrap}
+.tui-countdown-time{margin:0;padding:0}
+.tui-countdown-colon{display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center;padding:0 2.5px}
+.tui-colon-pad{padding:0!important}
+.tui-countdown-scale{-webkit-transform:scale(.9);transform:scale(.9);-webkit-transform-origin:center center;transform-origin:center center}
+.tui-countdown__ms{border:0.5px solid;border-radius:3px;overflow:hidden}
+.tui-ms__list{-webkit-animation:loop 1s steps(10) infinite;animation:loop 1s steps(10) infinite}
+@-webkit-keyframes loop{from{-webkit-transform:translateY(0);transform:translateY(0)}
+to{-webkit-transform:translateY(-100%);transform:translateY(-100%)}
+}@keyframes loop{from{-webkit-transform:translateY(0);transform:translateY(0)}
+to{-webkit-transform:translateY(-100%);transform:translateY(-100%)}
+}.tui-ms__item{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center}

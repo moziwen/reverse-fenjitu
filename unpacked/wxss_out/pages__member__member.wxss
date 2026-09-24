@@ -1,0 +1,24 @@
+.container,body{background-color:#1f1e41}
+.tui-img,.tui-img__box{width:100%}
+.tui-img{display:block;height:auto}
+.tui-bg-view{position:relative;width:100%}
+.tui-explain__box{box-sizing:border-box;left:0;padding:20px;position:absolute;top:0;z-index:1}
+.tui-explain-swiper,.tui-explain__box,.tui-swiper__item{height:100%;width:100%}
+.tui-swiper__item{box-sizing:border-box;padding:0 8px}
+.tui-explain-item{background-color:hsla(30,49%,78%,.05);border-radius:6px;box-sizing:border-box;color:#e3c8ad;height:100%;padding:20px 15px;position:relative;width:100%}
+.tui-ios-title{color:rgba(219,42,42,.95)}
+.tui-ios-title,.tui-vip__title{border-bottom:0.5px solid hsla(30,49%,78%,.4);font-size:20px;font-weight:700;padding-bottom:12px}
+.tui-vip__title{color:hsla(30,49%,78%,.95)}
+.tui-vip__desc{color:hsla(30,49%,78%,.85);font-size:16px;padding-top:12px}
+.tui-vip__btn{-webkit-align-items:center;align-items:center;background-color:hsla(30,49%,78%,.2);border-radius:40px;bottom:20px;display:-webkit-flex;display:flex;height:40px;-webkit-justify-content:center;justify-content:center;left:50%;position:absolute;-webkit-transform:translateX(-50%);transform:translateX(-50%);width:140px}
+.tui-attr-box{font-size:0;margin-bottom:5px;width:100%}
+.tui-attr-box,.tui-attr-item{-webkit-align-items:center;align-items:center;box-sizing:border-box;-webkit-justify-content:center;justify-content:center}
+.tui-attr-item{background:#fcedea;border:0.5px solid #fcedea;border-radius:16px;display:-webkit-inline-flex;display:inline-flex;font-size:16px;height:40px;margin:10px;max-width:100%;min-width:70%;padding:10 10px}
+.tui-attr-item wx-text{font-weight:700;padding-left:6px}
+.tui-attr-active{background:#fcedea!important;color:#e41f19;font-weight:700;position:relative}
+.tui-attr-active::after{border:0.5px solid #e41f19;border-radius:20px;content:"";height:100%;left:0;position:absolute;top:0;width:100%}
+.pay-dialog{background-color:#f8f8f8;border-radius:5px;margin-left:auto;margin-right:auto;overflow:hidden;text-align:center;width:80%}
+.tui-gray{color:#999}
+.tui-original-price{box-sizing:border-box;font-size:16px;line-height:13px;padding:5px}
+.tui-line-through{text-decoration:line-through}
+.timedown{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center}

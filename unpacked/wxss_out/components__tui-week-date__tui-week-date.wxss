@@ -1,0 +1,8 @@
+.tui-week-date{box-sizing:border-box;-webkit-justify-content:space-between;justify-content:space-between;padding:10px 7px;width:100%}
+.tui-week--item,.tui-week-date{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex}
+.tui-week--item{-webkit-flex:1;flex:1;-webkit-flex-direction:column;flex-direction:column}
+.tui-week--label{padding-bottom:4px;text-align:center}
+.tui-week--value{-webkit-align-items:center;align-items:center;border-radius:50%;display:-webkit-flex;display:flex;font-weight:700;height:32px;-webkit-justify-content:center;justify-content:center;text-align:center;width:32px}
+.tui-arrow--box{-webkit-flex-shrink:0;flex-shrink:0;padding:8px 2px}
+.tui-left--arrow{border:8px solid transparent;border-right-color:#5677fc;height:0;width:0}
+.tui-right--arrow{border:8px solid transparent;border-left-color:#5677fc;height:0;width:0}

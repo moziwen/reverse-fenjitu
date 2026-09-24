@@ -1,0 +1,12 @@
+.tui-tabs-view{-webkit-align-items:center;align-items:center;box-sizing:border-box;display:-webkit-flex;display:flex;-webkit-justify-content:space-between;justify-content:space-between;width:100%}
+.tui-tabs-relative{position:relative}
+.tui-tabs-fixed{left:0;position:fixed}
+.tui-tabs-fixed::before,.tui-tabs-relative::before{border-bottom:0.5px solid #eaeef1;bottom:0;content:"";left:0;position:absolute;right:0;-webkit-transform:scaleY(.5) translateZ(0);transform:scaleY(.5) translateZ(0);-webkit-transform-origin:0 100%;transform-origin:0 100%}
+.tui-unlined::before{border-bottom:0!important}
+.tui-tabs-item{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center;overflow:visible}
+.tui-tabs-disabled{opacity:.6}
+.tui-tabs-title{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center;overflow:visible;position:relative;z-index:3}
+.tui-tabs-active,.tui-tabs-slider{transition:all .15s ease-in-out}
+.tui-tabs-slider{left:0;position:absolute;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;z-index:1}
+.tui-tabs__badge{-webkit-align-items:center;align-items:center;border-radius:20px;display:-webkit-flex;display:flex;-webkit-flex-shrink:0;flex-shrink:0;font-size:12px;font-weight:400!important;height:16px;-webkit-justify-content:center;justify-content:center;min-width:10px;padding:0 3px;position:absolute;right:0;top:0;-webkit-transform:translate(88%,-50%);transform:translate(88%,-50%);z-index:4}
+.tui-badge__dot{border-radius:50%;height:8px;position:absolute;right:-5px;top:-5px;width:8px;z-index:4}

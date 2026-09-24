@@ -1,0 +1,29 @@
+.honor-page{background-color:#fafafa;padding:10px}
+.header{color:#4b4b4b;font-size:24px;font-weight:700;margin-bottom:10px;text-align:center}
+.subtitle{color:#555;font-size:16px;padding-bottom:5px;padding-top:5px}
+.honor-wall{display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;gap:12px}
+.honor-card{border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,.05);margin-bottom:5px;padding:12px;width:100%}
+.card-header{-webkit-justify-content:space-between;justify-content:space-between}
+.card-header,.card-header .card-left{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex}
+.card-header .card-left{gap:5px}
+.card-header .icon{height:20px;width:20px}
+.card-header .title{font-size:17px;font-weight:600}
+.top3{margin-top:5px;width:100%}
+.top3,.top3 .rank-item{display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column}
+.top3 .rank-item{-webkit-align-items:center;align-items:center}
+.top3 .rank-item .rank{font-size:16px;margin-bottom:2px}
+.top3 .rank-item .avatar{border:2px solid #fff;border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,.1);height:40px;margin-bottom:3px;width:40px}
+.top3 .rank-item .name{color:#333;font-size:13px;margin-bottom:2px}
+.top3 .rank-item .value{color:#666;font-size:12px}
+.tui-legend__box{display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;-webkit-flex-wrap:wrap;flex-wrap:wrap}
+.tui-legend__item{-webkit-align-items:center;align-items:center;box-sizing:border-box;display:-webkit-flex;display:flex;font-size:14px;margin-bottom:10px;margin-left:12px;padding-left:15px}
+.tui-legend__circle{border-radius:50%;-webkit-flex-shrink:0;flex-shrink:0;height:10px;margin-right:4px;width:10px}
+.tui-flex-box{-webkit-align-items:flex-start;align-items:flex-start;-webkit-justify-content:flex-start;justify-content:flex-start;margin-bottom:13px;width:100%}
+.tui-flex-box,.wrong-words-list{display:-webkit-flex;display:flex;-webkit-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;flex-wrap:wrap}
+.wrong-words-list{padding-bottom:10px;padding-left:6px;padding-right:10px}
+.tui-safearea-bottom{height:env(safe-area-inset-bottom);width:100%}
+.record-play{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center;z-index:99}
+.record-play-icon{height:27px;width:27px}
+.star-speak{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;-webkit-flex-direction:row;flex-direction:row;height:40px;-webkit-justify-content:center;justify-content:center;width:100%;z-index:1}
+.icon-star-speak{height:26px;width:26px}
+.tui-new-label-text{-webkit-align-items:center;align-items:center;border-radius:12%;display:-webkit-flex;display:flex;height:17px;-webkit-justify-content:center;justify-content:center;position:absolute;right:0px;top:0px;width:28px}

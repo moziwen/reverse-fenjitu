@@ -1,0 +1,22 @@
+.container{padding:5px 0 10px}
+.tui-item-box{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center;width:100%}
+.tui-right{color:#999;font-size:18px;margin-right:10px;width:25px}
+.tui-share-btn{background:transparent;border:0;border-radius:0;display:block;margin-top:2px;padding:0}
+.cu-list.grid1>.cu-item{display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;position:relative;transition-duration:0s}
+.cu-list.grid1>.cu-item:after{border-bottom:1px solid rgba(0,0,0,.1);border-radius:inherit;border-right:1px solid rgba(0,0,0,.1);box-sizing:border-box;content:" ";height:200%;left:0;pointer-events:none;position:absolute;top:0;-webkit-transform:scale(.5);transform:scale(.5);-webkit-transform-origin:0 0;transform-origin:0 0;width:200%}
+.cu-list.grid1>.cu-item wx-text{color:#888;display:block;font-size:13px;line-height:20px;margin-top:5px}
+.cu-list.grid1>.cu-item [class*=cuIcon]{display:block;font-size:24px;margin-top:10px;position:relative;width:100%}
+.cu-list.grid1>.cu-item .cu-tag{left:50%;margin-left:10px;right:auto}
+.cu-list.grid1{background-color:var(--white)}
+.cu-list.grid1,.tui-modal-custom{text-align:center}
+.tui-prompt-title{font-size:17px;padding-bottom:10px}
+.tui-page__hd{box-sizing:border-box;padding:3px;width:100%}
+.tui-page__bd{margin-top:20px;padding-bottom:40px}
+.tui-page__title{font-size:20px;font-weight:400;text-align:left}
+.tui-page__desc{color:#888;font-size:14px;margin-top:15px;text-align:left}
+.tui-attr-box{box-sizing:border-box;font-size:0;margin-bottom:5px;width:100%}
+.tui-attr-item{-webkit-align-items:center;align-items:center;background:#fcedea;border:0.5px solid #fcedea;border-radius:16px;box-sizing:border-box;display:-webkit-inline-flex;display:inline-flex;font-size:16px;height:40px;-webkit-justify-content:center;justify-content:center;margin:5px;max-width:100%;min-width:30%;padding:10 10px}
+.tui-attr-item wx-text{font-weight:700;padding-left:6px}
+.tui-attr-active{background:#fcedea!important;color:#e41f19;font-weight:700;position:relative}
+.tui-attr-active::after{border:0.5px solid #e41f19;border-radius:20px;content:"";height:100%;left:0;position:absolute;top:0;width:100%}
+.tui-footer{-webkit-align-items:center;align-items:center;color:#585858;display:-webkit-flex;display:flex;-webkit-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-justify-content:space-between;justify-content:space-between;min-height:30px;padding:5px;position:relative;z-index:10}

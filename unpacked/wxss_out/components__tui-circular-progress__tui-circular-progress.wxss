@@ -1,0 +1,2 @@
+.tui-circular-container,.tui-circular-default{position:relative}
+.tui-circular-progress{left:0;position:absolute;top:0;z-index:1}

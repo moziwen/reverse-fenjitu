@@ -1,0 +1,19 @@
+body{background-color:#f0f0f0;height:100%}
+.tui-page__hd{box-sizing:border-box;padding:40px;width:100%}
+.tui-page__bd{margin-top:20px;padding-bottom:40px}
+.tui-page__title{font-size:20px}
+.tui-page__desc{color:#888;font-size:14px;margin-top:10px;text-align:left}
+.tui-modal-custom{text-align:center}
+.tui-modal-input{border-bottom:0.5px solid #e6e6e6;font-size:16px;margin:15px auto 25px;width:80%}
+.tui-hidden-input{width:0}
+.tui-page__title{font-size:20px;font-weight:400;text-align:left}
+.container{padding-bottom:env(safe-area-inset-bottom)}
+.tui-block__box{background-color:#f1f1f1;overflow:hidden}
+.tui-block__box,.tui-extend-item{border-radius:10px;box-sizing:border-box;width:100%}
+.tui-extend-item{word-wrap:break-word;color:#302525;font-family:Microsoft YaHei;margin-bottom:5px;padding:15px 10px;position:relative;text-align:justify;word-break:break-all}
+.title-area{-webkit-justify-content:space-between;justify-content:space-between;position:relative;z-index:10}
+.title-area,.tui-title{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex}
+.tui-title{box-sizing:border-box;font-size:19px;font-weight:700;-webkit-justify-content:center;justify-content:center;padding:20px 15px 15px;width:100%}
+.tui-desc{box-sizing:border-box;color:#888;-webkit-flex-direction:row;flex-direction:row;font-size:14px;padding:5px 0;text-align:left;width:100%}
+.tui-desc,.tui-footer{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex}
+.tui-footer{color:#585858;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-justify-content:space-between;justify-content:space-between;min-height:26px;position:relative;z-index:10}

@@ -1,0 +1,5 @@
+.tui-section{box-sizing:border-box;width:100%}
+.tui-section__title{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;-webkit-flex-direction:row;flex-direction:row;-webkit-flex-shrink:0;flex-shrink:0;position:relative;word-break:break-all}
+.tui-section__decorate{position:absolute}
+.tui-section__sub{word-break:break-all}
+.tui-section__descr{font-weight:400}

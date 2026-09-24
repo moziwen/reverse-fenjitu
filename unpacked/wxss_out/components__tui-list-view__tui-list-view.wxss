@@ -1,0 +1,8 @@
+.tui-list-title{box-sizing:border-box;padding:15px;width:100%}
+.tui-list-content{position:relative;width:100%}
+.tui-list-content::before{border-top:1px solid #eaeef1;content:" ";left:0;pointer-events:none;position:absolute;right:0;top:0;-webkit-transform:scaleY(.5) translateZ(0);transform:scaleY(.5) translateZ(0);-webkit-transform-origin:0 0;transform-origin:0 0;z-index:2}
+.tui-list-content::after{border-bottom:1px solid #eaeef1;bottom:0;content:"";left:0;position:absolute;right:0;-webkit-transform:scaleY(.5) translateZ(0);transform:scaleY(.5) translateZ(0);-webkit-transform-origin:0 100%;transform-origin:0 100%;width:100%}
+.tui-border-top::before{border-top:0}
+.tui-border-all::after,.tui-border-bottom::after{border-bottom:0}
+.tui-border-all::before{border-top:0}
+.tui-radius{overflow:hidden}

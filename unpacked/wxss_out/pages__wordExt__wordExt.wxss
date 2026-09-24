@@ -1,0 +1,25 @@
+body{background-color:#f7f7f7}
+.container{padding-bottom:55px}
+.tui-button-bottom{-webkit-align-items:center;align-items:center;bottom:30px;display:-webkit-flex;display:flex;height:120px;-webkit-justify-content:center;justify-content:center;position:fixed;width:100%;z-index:99}
+.bottom-icon{height:69px;margin:12px;width:69px;z-index:999}
+.tui-banner-tag{color:#fff;left:0;position:absolute;top:20px}
+.share{position:fixed;right:10px;top:10px}
+.share wx-button{border:none;height:51px;padding:0;width:51px}
+.share-image{height:51px;width:100%}
+.tui-banner-swiper{position:relative}
+.tui-product-title{border-radius:30px;-webkit-justify-content:center;justify-content:center;min-height:100px;position:fixed;top:50px;width:100%}
+.tui-pro-titbox,.tui-product-title{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex}
+.tui-pro-titbox{box-sizing:border-box;font-size:64px;font-weight:500;padding:5px 15px;position:relative}
+.popup-recording{-webkit-align-items:center;align-items:center;border-radius:6%;color:#fff;display:-webkit-flex;display:flex;-webkit-flex-direction:row;flex-direction:row;height:100%;-webkit-justify-content:center;justify-content:center;width:100%;z-index:9999}
+.icon-recording{height:180px;width:180px}
+.pop-view{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;-webkit-justify-content:center;justify-content:center}
+.popup-text{color:#fff;-webkit-flex-direction:row;flex-direction:row;height:120px}
+.popup-text,.result-text{-webkit-align-items:center;align-items:center;border-radius:6%;display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center;width:300px}
+.result-text{height:100px}
+.value-text{font-family:Times New Roman,Times,serif;font-size:150px;font-style:italic;font-weight:700}
+.poster-container{-webkit-align-items:center;align-items:center;background-color:rgba(0,0,0,.7);display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;height:100vh;-webkit-justify-content:center;justify-content:center;left:0;position:fixed;top:0;width:100vw;z-index:9999}
+.poster-img{border-radius:8px;box-shadow:0 6px 16px rgba(0,0,0,.3);height:540px;width:300px}
+.save-btn{background-color:#ff9800;border-radius:20px;color:#fff;font-size:15px;margin-top:20px;width:200px;z-index:10000}
+.hidden-canvas{height:540px;left:-9999px;position:absolute;top:-9999px;width:300px;z-index:-1}
+.close-btn{-webkit-align-items:center;align-items:center;background-color:hsla(0,0%,100%,.25);border-radius:50%;color:#fff;display:-webkit-flex;display:flex;font-size:22px;font-weight:300;height:30px;-webkit-justify-content:center;justify-content:center;line-height:1;position:absolute;right:30px;top:50px;width:30px;z-index:10001}
+.close-btn:active{background-color:hsla(0,0%,100%,.4)}

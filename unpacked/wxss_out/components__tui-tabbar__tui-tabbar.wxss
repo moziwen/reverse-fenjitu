@@ -1,0 +1,18 @@
+.tui-tabbar{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;height:50px;-webkit-justify-content:space-between;justify-content:space-between;position:relative;width:100%}
+.tui-backdrop__filter{-webkit-backdrop-filter:blur(15px);backdrop-filter:blur(15px)}
+.tui-tabbar-fixed{bottom:0;box-sizing:initial!important;left:0;padding-bottom:env(safe-area-inset-bottom);position:fixed}
+.tui-tabbar::before{border-top:1px solid #b2b2b2;content:" ";display:block;left:0;position:absolute;top:0;-webkit-transform:scaleY(.5) translateZ(0);transform:scaleY(.5) translateZ(0);-webkit-transform-origin:0 0;transform-origin:0 0;width:100%;z-index:3}
+.tui-tabbar-item{-webkit-align-items:center;align-items:center;box-sizing:border-box;display:-webkit-flex;display:flex;-webkit-flex:1;flex:1;-webkit-flex-direction:column;flex-direction:column;height:100%;-webkit-justify-content:space-between;justify-content:space-between;padding:5px 0;text-align:center;z-index:5}
+.tui-icon-box,.tui-tabbar-item{position:relative}
+.tui-item-hump{height:49px}
+.tui-tabbar-icon{display:block;height:26px;width:26px}
+.tui-hump-box{border-radius:50%;height:60px;left:50%;position:absolute;top:-25px;-webkit-transform:translateX(-50%);transform:translateX(-50%);width:60px;z-index:4}
+.tui-hump-box::after{border:1px solid #b2b2b2;border-radius:60px;box-sizing:border-box;content:" ";display:block;height:200%;left:0;position:absolute;top:0;-webkit-transform:scale(.5) translateZ(0);transform:scale(.5) translateZ(0);-webkit-transform-origin:0 0;transform-origin:0 0;width:200%}
+.tui-unlined::after{height:0!important}
+.tui-tabbar-hump{border-radius:50%;height:50px;left:50%;position:absolute;top:-20px;-webkit-transform:translateX(-50%) rotate(0deg);transform:translateX(-50%) rotate(0deg);-webkit-transition:all .2s linear;transition:all .2s linear;width:50px;z-index:5}
+.tui-tabbar-hump wx-image{display:block;height:50px;width:50px}
+.tui-hump-active{-webkit-transform:translateX(-50%) rotate(135deg);transform:translateX(-50%) rotate(135deg)}
+.tui-text-scale{font-size:12.5px;font-weight:700;line-height:14px;-webkit-transform:scale(.8);transform:scale(.8);-webkit-transform-origin:center 100%;transform-origin:center 100%}
+.tui-text-hump{bottom:5px;left:50%;position:absolute;-webkit-transform:scale(.8) translateX(-50%);transform:scale(.8) translateX(-50%);-webkit-transform-origin:0 100%;transform-origin:0 100%}
+.tui-badge{-webkit-align-items:center;align-items:center;border-radius:20px;display:-webkit-flex;display:flex;font-size:12px;height:16px;-webkit-justify-content:center;justify-content:center;min-width:10px;padding:0 3px;position:absolute;right:0;top:-2.5px;-webkit-transform:translateX(70%);transform:translateX(70%)}
+.tui-badge-dot{border-radius:50%;height:8px;position:absolute;right:-2px;top:-2px;width:8px}

@@ -1,0 +1,47 @@
+.tui-modal__container{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;height:100%;-webkit-justify-content:center;justify-content:center;left:0;position:fixed;top:0;visibility:hidden;width:100%}
+.tui-modal-box{box-sizing:border-box;opacity:0;position:relative;transition:all .3s ease-in-out;visibility:hidden}
+.tui-modal-scale{-webkit-transform:scale(0);transform:scale(0)}
+.tui-modal-normal{-webkit-transform:scale(1);transform:scale(1)}
+.tui-modal-show{opacity:1;visibility:visible}
+.tui-modal-mask{background-color:rgba(0,0,0,.6);bottom:0;left:0;opacity:0;position:fixed;right:0;top:0;transition:all .3s ease-in-out;visibility:hidden}
+.tui-mask-show{opacity:1;visibility:visible}
+.tui-modal-title{color:#333;font-size:17px;font-weight:700;padding-top:10px;text-align:center}
+.tui-modal-content{color:#999;font-size:14px;padding-bottom:30px;padding-top:10px;text-align:center}
+.tui-mtop{margin-top:15px}
+.tui-mbtm{margin-bottom:15px}
+.tui-modalBtn-box{-webkit-align-items:center;align-items:center;display:-webkit-flex;display:flex;-webkit-justify-content:space-between;justify-content:space-between;width:100%}
+.tui-flex-column{-webkit-flex-direction:column;flex-direction:column}
+.tui-modal-btn{border-radius:5px;font-size:13px;height:34px;line-height:34px;margin-left:0;margin-right:0;overflow:visible;position:relative;width:46%}
+.tui-modal-btn::after{border-radius:10px;content:" ";height:200%;left:0;position:absolute;top:0;-webkit-transform:scale(.5,.5);transform:scale(.5,.5);-webkit-transform-origin:0 0;transform-origin:0 0;width:200%}
+.tui-btn-width{width:80%!important}
+.tui-primary{background:#5677fc;color:#fff}
+.tui-primary-hover{background:#4a67d6;color:#e5e5e5}
+.tui-primary-outline{background:transparent;color:#5677fc}
+.tui-primary-outline::after{border:1px solid #5677fc}
+.tui-danger{background:#ed3f14;color:#fff}
+.tui-danger-hover{background:#d53912;color:#e5e5e5}
+.tui-danger-outline{background:transparent;color:#ed3f14}
+.tui-danger-outline::after{border:1px solid #ed3f14}
+.tui-red{background:#e41f19;color:#fff}
+.tui-red-hover{background:#c51a15;color:#e5e5e5}
+.tui-red-outline{background:transparent;color:#e41f19}
+.tui-red-outline::after{border:1px solid #e41f19}
+.tui-warning{background:#ff7900;color:#fff}
+.tui-warning-hover{background:#e56d00;color:#e5e5e5}
+.tui-warning-outline{background:transparent;color:#ff7900}
+.tui-warning-outline::after{border:1px solid #ff7900}
+.tui-green{background:#19be6b;color:#fff}
+.tui-green-hover{background:#16ab60;color:#e5e5e5}
+.tui-green-outline{background:transparent;color:#19be6b}
+.tui-green-outline::after{border:1px solid #19be6b}
+.tui-white{background:#fff;color:#333}
+.tui-white-hover{background:#f7f7f9;color:#666}
+.tui-white-outline{background:transparent;color:#333}
+.tui-white-outline::after{border:1px solid #333}
+.tui-gray{background:#ededed;color:#999}
+.tui-gray-hover{background:#d5d5d5;color:#898989}
+.tui-gray-outline{background:transparent;color:#999}
+.tui-gray-outline::after{border:1px solid #999}
+.tui-outline-hover{opacity:.6}
+.tui-circle-btn{border-radius:20px!important}
+.tui-circle-btn::after{border-radius:40px!important}
