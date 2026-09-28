@@ -1,17 +1,15 @@
 /* zcode-workflow
-name: distill-spec
 description: 逆向仓每页规格蒸馏流水线：提取依据包 → 蒸馏 spec → 对账员独立 diff
 whenToUse: reverse-fenjitu 仓按页蒸馏还原规格时；一次只跑一页（一页一停）
-*/
-/* zcode-workflow args:
-page:
-  type: string
-  required: true
-  description: 页面名，如 cardQuiz
-repo:
-  type: string
-  required: false
-  default: D:/webwork/reverse-fenjitu
+args:
+  page:
+    type: string
+    required: true
+    description: 页面名，如 cardQuiz
+  repo:
+    type: string
+    required: false
+    default: D:/webwork/reverse-fenjitu
 */
 
 interface ExtractResult { chunkWebview: string; chunkAppservice: string; wxssFile: string; navBar: string; notes: string }
