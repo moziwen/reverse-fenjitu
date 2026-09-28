@@ -15,18 +15,18 @@
 | 页面 | 依据包 | spec | 对账 | 验收 |
 |---|---|---|---|---|
 | index | | | | |
-| daka | | | | |
-| card | | | | |
+| daka | ✓ | ✓ | ✓ | |
+| card | ✓ | ✓ | ✓ | |
 | cardTest | | | | |
 | cardQuiz | | | | |
 | report | | | | |
 | planList | | | | |
 | planDetail | | | | |
 | planCreate | | | | |
-| word | | | | |
+| word | ✓ | ✓ | ✓（第二轮收尾复核 PASS，2026-09-28） | |
 | wordExt | | | | |
-| listen | | | | |
-| audio | | | | |
+| listen | ✓ | ✓ | ✓ | |
+| audio | ✓ | ✓ | ✓ | |
 | search | | | | |
 | share | | | | |
 | more | | | | |

@@ -20,7 +20,7 @@ const page = String(args.page)
 const repo = String(args.repo ?? 'D:/webwork/reverse-fenjitu')
 
 phase('定位 chunk 并提取依据包')
-const extract = agent('解包工').ask<ExtractResult>(
+const extract = await agent('解包工').ask<ExtractResult>(
   `你是逆向仓的解包工。仓库：${repo}。目标页面：${page}。
 1. 用 Grep 在 ${repo}/unpacked/chunk_*.webview.js 中定位包含 './pages/${page}/${page}.wxml' 的 chunk 文件。
 2. 从该 chunk 的 $gwx 节点树提取页面骨架（类名/文案/事件），从对应 appservice chunk 提取逻辑与云函数调用清单，
@@ -30,7 +30,7 @@ const extract = agent('解包工').ask<ExtractResult>(
 )
 
 phase('蒸馏还原规格书')
-const spec = agent('蒸馏工').ask<SpecResult>(
+const spec = await agent('蒸馏工').ask<SpecResult>(
   `你是蒸馏工。依据包结论如下，按 ${repo}/specs/pages/_TEMPLATE.md 模板写 ${repo}/specs/pages/${page}.md。
 每条结论必须带证据（chunk 文件+行号）；没把握的标「待复核」，禁止编造；资源路径只写规律+样本数。
 依据包：
@@ -39,7 +39,7 @@ ${JSON.stringify(extract)}
 )
 
 phase('对账员独立复核')
-const audit = agent('对账员').ask<AuditResult>(
+const audit = await agent('对账员').ask<AuditResult>(
   `你是对账员，只信原文不信过程。独立重推页面 ${page} 并与 spec 逐项核对：
 原文：${repo}/unpacked/ 下该页 chunk 节点树、wxss、app-config。
 产出：${spec.path}。
