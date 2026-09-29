@@ -1,7 +1,7 @@
 ---
 页名: daka
 显示名: 打卡（学习总览）
-状态: 对账通过（待验收）
+状态: 对账通过（待验收；行内注释口径已清理，待对账员抽查确认）
 chunk: chunk_32.webview.js / chunk_32.appservice.js
 导航栏: custom（自绘导航，无系统栏标题；页面内 tui-header2 显示 {date}）
 ---
@@ -76,7 +76,7 @@ chunk: chunk_32.webview.js / chunk_32.appservice.js
     <view class="flex align-center padding-left padding-bottom">     (W:120)
       <tui-week-date activeBackground arrow bindclick="dateClick"/>  (W:118 属性 + m0 组件调用 W:876 ['activeBackground',97,'arrow',1,'bindclick',2])
       <view class="cu-progress round sm" style="width:86%;">         (W:121-122)
-        <view class="bg-macron" style="width:{{plan_progress}};"/>   (W:123-124, 节点树原文拼写 bg-macron；页面 wxss 无此类定义，实际不生效——正确类名为 bg-macaron，见 X:32)
+        <view class="bg-macron" style="width:{{plan_progress}};"/>   (W:123-124, 节点树原文拼写 bg-macron——运行时生效于 app.wxss 全局定义 `.bg-macron{background-color:var(--macron);color:var(--white)}`（--macron:#ff9b6a，page-frame L:1644）；页面 wxss 自己的类是 bg-macaron（X:32，color:var(--black)），两者 color 不同)
       </view>
       <view class="record-play margin-left-sm text-gray">{{plan_days}}/{{total}}</view>  (W:125-127)
     </view>
@@ -124,7 +124,7 @@ chunk: chunk_32.webview.js / chunk_32.appservice.js
       <view class="cu-list grid col-3">                              (W:184)
         <!-- wx:for {{cardList}} (W:185), bindtap=goCardStudy data-id={{item.id}} (W:187-189) -->
         <view class="cu-card cu-item" style="width:100%;height:320rpx;">   (W:188-192)
-          <view class="bg-macron tui-new-label-text text-center text-white text-xs">{{item.num}}</view>  (W:193-194, 节点树原文拼写 bg-macron，页面 wxss 无定义不生效；正确类名 bg-macaron 见 X:32)
+          <view class="bg-macron tui-new-label-text text-center text-white text-xs">{{item.num}}</view>  (W:193-194, 节点树原文拼写 bg-macron，运行时生效于 app.wxss 全局定义（color=var(--white)）；页面 bg-macaron 见 X:32，color=var(--black))
           <view class="text-cut text-sm margin-top-xs">{{item.level}}: {{item.title}}</view>  (W:195-196, title 复用 z[137][3]→ops[137])
         </view>
       </view>
@@ -223,7 +223,7 @@ chunk: chunk_32.webview.js / chunk_32.appservice.js
 <tui-bottom-popup show="{{modalStudy}}" bindclose="hideModal" maskZIndex="1003" zIndex="1004">    (W:373-375, 节点 o62B W:1352 ['bindclose',377,…]：maskZIndex=z[378]=z[333] '1003'、zIndex=z[380]=z[335] '1004')
   内含 tui-charts-column id="tui_column_study" (options4, W:383-390)；
   等级进度列表 wx:for {{levelProgress}} (m0 _2z W:1388, 循环起点 z[396])：每项 view class cu-progress round x (z[384]=W:422)
-    内 view class bg-macron style="width:{{item.progress}};" (z[386]=z[104]=W:123 'bg-macron'，节点树原文拼写 bg-macron，页面 wxss 无定义不生效；正确类名 bg-macaron 见 X:32) + 文案 {{item.progress}}，外层 class padding (z[398]=W:417)
+    内 view class bg-macron style="width:{{item.progress}};" (z[386]=z[104]=W:123 'bg-macron'，节点树原文拼写 bg-macron，运行时生效于 app.wxss 全局定义（color=var(--white)）；页面 bg-macaron 见 X:32) + 文案 {{item.progress}}，外层 class padding (z[398]=W:417)
 </tui-bottom-popup>
 
 <tui-bottom-popup show="{{modalTest}}" bindclose="hideModal" maskZIndex="1001" zIndex="1002">     (W:412-413, 节点 oP3B W:1393 ['bindclose',409,…]：maskZIndex=z[410]=z[302] '1001'、zIndex=z[412]=z[304] '1002')
@@ -512,6 +512,6 @@ onShow（A:687）：itemName1 按 globalData.groupID 切「我的班级/加入�
 
 **篡改检查：** 第 6 节对账内容（勾选项 4 条、diff 摘要 12 条、结论段）未被改动；实质清单核数本会话复测一致——callFunction×2、collection 计数 user_data×16/user_study×3/user_plan×1/words×2、today_current×2，原样。
 
-**遗留备注（不阻塞验收，下轮蒸馏工顺手同步）：** 第 1 节三处行内注释（W:123/W:193/W:425 一带，骨架 L79/L127/L226）仍残留旧表述「页面 wxss 无定义不生效——正确类名为 bg-macaron」，与第 2 节已采纳的「bg-macron 落在 app.wxss 全局定义」相抵；开发仓写码以第 2 节与修正记录 11 为准（节点树原文拼写 bg-macron，运行时生效于全局定义，color=var(--white)），三处行内注释按此口径理解。
+**遗留备注（2026-09-28 已清理）：** 原「第 1 节三处行内注释残留旧表述」已按第 2 节与修正记录 11 的口径改写（bg-macron 运行时生效于 app.wxss 全局定义，color=var(--white)，与页面 bg-macaron 的 color=var(--black) 不同），本页口径已一致。
 
 **verdict=PASS**：12 条 diff 修正全部验证通过，bg-macron 全局定义发现成立并采纳，篡改检查无异常。PROGRESS.md 由对账员更新推进，本页转「对账通过（待验收）」，等用户验收。
