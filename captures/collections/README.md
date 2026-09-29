@@ -25,6 +25,23 @@
 原始记录：`_counts.jsonl`。采集方式：WMPF CDP（ws://127.0.0.1:62000）→ Runtime.evaluate →
 appservice 上下文（context 3）调 `wx.cloud.database().collection(<n>).count()`，只读，间隔 3~8s。
 
+
+## 第 1 天导出（2026-09-29 11:0x~，会话约 25 分钟）
+
+| 集合 | 今日导出 | 服务端 count | 对账 |
+|---|---|---|---|
+| units | **32** | 32 | ✅ 全量（行数=唯一_id=32=32） |
+| user_school | **400** | 1,070 | 🔶 第一批（拆次日，余 672） |
+| guide | 0 | 0 | ✅ 空集确认 |
+
+- units 结构：`_id/gradeName/grade_id(1~6)/id(unit_年级_unitNo)/title/unitNo/sentences(matchText,sentence)/speak(audio[],img,text)/words(id,word,zh,audio,img,book,extend)`；
+  URL 域名 100% `qianyufang.top`（586 处），可供 spec「待真机验证」项抽样。
+- user_school 结构：`_id/_openid/baby_id/unit_id/date/vip/words/cardPass/pinduPass/speakPass/textPass/unitStar/records`。
+- **class 集合复核：get() 同样权限拒绝**（与 count=null 一致）——服务端把 class 设为不可客户端读，
+  该集合数据只能走管理端导出，标「不可采集」。
+- 运维：脚本固化 `captures/tools/day1_export.py` / `day1_user_school.py`；次日续跑 user_school
+  用 skip(400) 起，配额继续 ≤500。
+
 ## 采集纪律与计划（后续 jsonl 导出遵照 wxapp-cloud-export）
 
 - 只读（脚本零写调用）；间隔 3~8s 随机；**单日 ≤500 条**；单会话 ≤30 分钟；拆 3~5 天
