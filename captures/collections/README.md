@@ -42,6 +42,16 @@ appservice 上下文（context 3）调 `wx.cloud.database().collection(<n>).coun
 - 运维：脚本固化 `captures/tools/day1_export.py` / `day1_user_school.py`；次日续跑 user_school
   用 skip(400) 起，配额继续 ≤500。
 
+
+## 第 2 天导出（2026-09-29 下午，会话 22 分钟）
+
+| 集合 | 今日 | 累计 | 服务端 count | 余量 |
+|---|---|---|---|---|
+| user_school | 500 | **900** | 1,070 | 170（拆第 3 天） |
+
+- 今日配额 500 条用满即停（纪律）。跨日去重验证：900 行 = 900 唯一 _id，无重复。
+- 第 3 天计划：user_school 余 170 收尾全量 + words 前半（count=3089，约 330 条配额内）。
+
 ## 采集纪律与计划（后续 jsonl 导出遵照 wxapp-cloud-export）
 
 - 只读（脚本零写调用）；间隔 3~8s 随机；**单日 ≤500 条**；单会话 ≤30 分钟；拆 3~5 天
