@@ -420,13 +420,13 @@ onShow（A:687）：itemName1 按 globalData.groupID 切「我的班级/加入�
 
 | 资源 | 规律 | 证据 | 状态 |
 |---|---|---|---|
-| 磨耳朵音频 | `https://qianyufang.top/{level}/Audio/{id}.mp3`（level=cardList[].level，id=cardList[].id） | A:687 playListenAudio，代码内 1 处模板拼接 | ⚠️ 待真机验证 |
-| 分类图标 | `https://qianyufang.top/public/yingyu/images/daka/{group,plan,milestone,calendar,share}.png` | W ops 节点树字面量 5 个（W:30/37/44/51/60），grep 命中 5 | ⚠️ 待真机验证 |
-| 功能图标 | `https://qianyufang.top/public/yingyu/images/icon/{love,pause,play,more,speak_finish,star_icon,star_icon_grey,voice}.png` | W ops 节点树字面量 8 个（W:93/183/229/151/263/266），grep 命中 8 | ⚠️ 待真机验证 |
-| 分享封面（好友） | 卡片封面替换 `.jpg→0.jpg`（如 `xxx.jpg→xxx0.jpg`），兜底 tcb `…/public/yingyu/shareImg.png` | A:687 onShareAppMessage，字面量 1 处 | ⚠️ 待真机验证 |
-| 分享封面（朋友圈） | 卡片封面原样，兜底 `https://qianyufang.top/public/yingyu/fenjitu.jpg` | A:687 onShareTimeline，字面量 1 处 | ⚠️ 待真机验证 |
+| 磨耳朵音频 | `https://qianyufang.top/{level}/Audio/{id}.mp3`（level=cardList[].level，id=cardList[].id） | A:687 playListenAudio，代码内 1 处模板拼接 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 分类图标 | `https://qianyufang.top/public/yingyu/images/daka/{group,plan,milestone,calendar,share}.png` | W ops 节点树字面量 5 个（W:30/37/44/51/60），grep 命中 5 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 功能图标 | `https://qianyufang.top/public/yingyu/images/icon/{love,pause,play,more,speak_finish,star_icon,star_icon_grey,voice}.png` | W ops 节点树字面量 8 个（W:93/183/229/151/263/266），grep 命中 8 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 分享封面（好友） | 卡片封面替换 `.jpg→0.jpg`（如 `xxx.jpg→xxx0.jpg`），兜底 tcb `…/public/yingyu/shareImg.png` | A:687 onShareAppMessage，字面量 1 处 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 分享封面（朋友圈） | 卡片封面原样，兜底 `https://qianyufang.top/public/yingyu/fenjitu.jpg` | A:687 onShareTimeline，字面量 1 处 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
 | 任务/学习卡封面 | 云数据库 user_data.card[].cover / cardQuiz[].cover，命名规律未知 | W:137/W:603 节点绑定 + A:687 processUserData | ⚠️ 待采集（captures/collections/ 当前为空目录） |
-| 公众号引导文章 | `https://mp.weixin.qq.com/s/mi9sCAGNji5yYOHZJ2Xw0g` | A:687 clickGuide 字面量 1 处 | ⚠️ 待真机验证 |
+| 公众号引导文章 | `https://mp.weixin.qq.com/s/mi9sCAGNji5yYOHZJ2Xw0g` | A:687 clickGuide 字面量 1 处 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
 
 > 全局类出处修正（对应对账 diff#11）：第 2 节「依赖的全局类」的证据指向更正为 page-frame.html 的 setCssToHead 各块（app.wxss 与组件 wxss），本页内嵌副本 W:1748 不含 text-bold/cu-progress/light-orange/tui-mtop 等全局类，仅有页面自身样式（与 X 互证部分仅限页面样式）。
 

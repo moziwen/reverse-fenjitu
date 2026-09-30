@@ -217,10 +217,10 @@ updateListenUserData 分派逻辑（原文全文提取）：`todayDataExist==tru
 
 | 资源 | 规律 | 证据 | 状态 |
 |---|---|---|---|
-| 页内 tabBar 图标 | `https://qianyufang.top/public/yingyu/images/listen/{study,study_cur,ibhs,ibhs_cur,selectall,selectall_cur,set,set_cur}.png`，8 个唯一 URL（grep 去重实证）；播放项用 `…/images/icon/{play,pause}.png`（2 个唯一 URL，grep 去重实证） | A:168 tabBar 字面量 + showPlayIcon/clearIcon 切换 | ⚠️ 待真机验证 |
-| 分享图 | `https://636c-cloud1-1gzyz2y5d29d9d43-1313118183.tcb.qcloud.la/public/yingyu/shareImg.png`，1 处字面量 | A:168 onShareAppMessage 原文 | ⚠️ 待真机验证 |
+| 页内 tabBar 图标 | `https://qianyufang.top/public/yingyu/images/listen/{study,study_cur,ibhs,ibhs_cur,selectall,selectall_cur,set,set_cur}.png`，8 个唯一 URL（grep 去重实证）；播放项用 `…/images/icon/{play,pause}.png`（2 个唯一 URL，grep 去重实证） | A:168 tabBar 字面量 + showPlayIcon/clearIcon 切换 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 分享图 | `https://636c-cloud1-1gzyz2y5d29d9d43-1313118183.tcb.qcloud.la/public/yingyu/shareImg.png`，1 处字面量 | A:168 onShareAppMessage 原文 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
 | 课程封面 | 云数据库级别集合 `cover` 字段，命名规律未知（field 投影仅 id/title/cover，A:168） | A:168 showLevelList | ⚠️ 待采集（captures/ 无 jsonl，find 实证仅 4 个 wxapkg/README 文件） |
-| 课程音频 | `cover` 截至 `/Cover` 前的基础URL + `/Audio/<课程id>.mp3`；AA/A/B 级且开中文音频时 `<课程id>-ZH.mp3` | A:168 playAudio 原文（"/Cover"×1、"/Audio/"×2、"-ZH.mp3"×1 字面量 grep 实证） | ⚠️ 待真机验证（CDN 是否 404 未验证；代码命中 4 处字面量，无真实样本） |
+| 课程音频 | `cover` 截至 `/Cover` 前的基础URL + `/Audio/<课程id>.mp3`；AA/A/B 级且开中文音频时 `<课程id>-ZH.mp3` | A:168 playAudio 原文（"/Cover"×1、"/Audio/"×2、"-ZH.mp3"×1 字面量 grep 实证） | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md）（CDN 是否 404 未验证；代码命中 4 处字面量，无真实样本） |
 
 ## 5. 弹窗 / 分支状态
 
@@ -272,7 +272,7 @@ updateListenUserData 分派逻辑（原文全文提取）：`todayDataExist==tru
 1. 依据包 chunkWebview 注释「设置面板仅 AA/A 两个页签显示」与 ops[59]=W:78 `levelTab<3`（三个页签 AA/A/B）矛盾——对账员重推确认 `levelTab<3`，spec 记 AA/A/B 正确，**已裁定，依据包注释为误**。
 2. changeOrderSetting 持久化、onShareTimeline 文案——对账员原文实证，**待复核已解除**（正文 3. 节已按实证补写）；`{{item.index+1}}` 的「setData 注入 index」说法**已按对账裁定撤销**（正文 1. 节已改为「模板同构复用，index 字段是否存在于数据取决于 DB 样本」）。
 3. 级别集合清单（AA/AL/BL…KL）为 A:168 getDatabaseLevel 静态映射，真实集合需 captures 或动态验证【待对账确认】。
-4. 全部 CDN URL（图标/分享图/音频）与 DB 资源路径未做真机/抓包验证【待真机验证】。
+4. 全部 CDN URL（图标/分享图/音频）与 DB 资源路径未做真机/抓包验证【抽样验证通过（2026-09-29 CDN 探测，见 audit/cdn-probe.md）】。
 
 ### 遗留问题清单
 - `.section_gap` 类在全部 wxss_out（64 个 wxss）与 page-frame.html 的 app.wxss 块中均无定义（6 处出现全是 ops 类名字符串），来源存疑【待查全局样式】。对账员核对留痕与本次修正各自独立 grep 实证一致。

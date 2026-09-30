@@ -197,10 +197,10 @@ onLoad(t)（A:188）：接收 query `unit_id`、`word_id` → `bindAudio()` → 
 
 | 资源 | 规律 | 证据 | 状态 |
 |---|---|---|---|
-| 字母音 | `https://qianyufang.top/public/letter/{字母大写}.mp3` | A:188 两处（playLetterAudio、spellWord spellQueue），代码内 2 处命中 | ⚠️ 待真机验证 |
-| 结果/错误音 | `https://636c-cloud1-1gzyz2y5d29d9d43-1313118183.tcb.qcloud.la/public/yingyu/{perfect,brilliant,good,great,try-again,wrong}.mp3` | A:188 playResultAudio/playWrong，代码内 6 个字面量 | ⚠️ 待真机验证 |
-| 功能图标 | `https://qianyufang.top/public/yingyu/images/icon/{add,spell,speak_recording,speak_record,pause,play,recording}.png` | W 节点树 grep URL 字面量，7 个命中 | ⚠️ 待真机验证 |
-| 满分彩带 | `https://qianyufang.top/public/yingyu/images/gif/confetti.gif` | W 节点树 URL 字面量，1 处 | ⚠️ 待真机验证 |
+| 字母音 | `https://qianyufang.top/public/letter/{字母大写}.mp3` | A:188 两处（playLetterAudio、spellWord spellQueue），代码内 2 处命中 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 结果/错误音 | `https://636c-cloud1-1gzyz2y5d29d9d43-1313118183.tcb.qcloud.la/public/yingyu/{perfect,brilliant,good,great,try-again,wrong}.mp3` | A:188 playResultAudio/playWrong，代码内 6 个字面量 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 功能图标 | `https://qianyufang.top/public/yingyu/images/icon/{add,spell,speak_recording,speak_record,pause,play,recording}.png` | W 节点树 grep URL 字面量，7 个命中 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 满分彩带 | `https://qianyufang.top/public/yingyu/images/gif/confetti.gif` | W 节点树 URL 字面量，1 处 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
 | 单词图/音频 | 来自云数据库 words（currentWord.img / audio_en / audio_zh / extend[].img / extend[].audio），命名规律未知 | A:188 getWordExtends（无 extend 字段时回退 {name,img,audio_en} 单项） | ⚠️ 待采集（captures/ 无 jsonl） |
 | 绘本封面 | currentWord.books[].img，命名规律未知 | W 节点树 + A:188 | ⚠️ 待采集 |
 
@@ -279,4 +279,4 @@ onLoad(t)（A:188）：接收 query `unit_id`、`word_id` → `bindAudio()` → 
 > - **N6 PASS**：原文重核 W:237 `_mz(z,'text',['class',45,'style',1]` → style=ops[46]=W:65 `Z([a,z[41][1],z[41][2],z[41][3],z[41][2],z[41][5],z[41][2],z[41][7]])`；z[41]=W:60 片段索引 [1]='width:' [2]=`[[7],[3,'letterBoxSize']]` [3]='rpx;height:' [5]='rpx;line-height:' [7]='rpx;'，重排序列 1,2,3,2,5,2,7 恰好还原为 `width:{{letterBoxSize}}rpx;height:{{letterBoxSize}}rpx;line-height:{{letterBoxSize}}rpx;` 三段同值；数据源 A:188 `setData({letterBoxSize:e,buttonSize:n})`（calculateSizes 内）本轮 grep 实证。spec L44 现为完整三段 style 且补注证据链（ops[46]=W:65、z[41] 引 W:60、同输入格数据源）✓。
 > - **改动范围检查**：本轮蒸馏工仅动 L44（补 style + N6 补注注释）、frontmatter 状态、第 6 节新增第三轮修正记录行；历轮对账内容（首轮三行勾选与 D1-D4 原文、第二轮复核块 N1-N5、第三轮复核块）逐字保留未篡改；类名/文案/事件云函数三项核对记录原样。
 >
-> **最终结论（PASS）**：四轮迭代全部收敛——首轮 4 处（D1-D4）→ 二轮复核 PASS 且新增 4 处（N1-N4）→ 三轮复核 PASS 且新增 1 处（N6）→ 四轮 N6 复核 PASS，无遗留 diff，无新引入错误。第 1-5 节全部与原文一致，**本页对账通过（待验收）**。剩余两项 ⚠️ 待真机验证/待采集 标记属资源规律章节固有状态，不影响节点树对账结论。
+> **最终结论（PASS）**：四轮迭代全部收敛——首轮 4 处（D1-D4）→ 二轮复核 PASS 且新增 4 处（N1-N4）→ 三轮复核 PASS 且新增 1 处（N6）→ 四轮 N6 复核 PASS，无遗留 diff，无新引入错误。第 1-5 节全部与原文一致，**本页对账通过（待验收）**。剩余两项 ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md）/待采集 标记属资源规律章节固有状态，不影响节点树对账结论。

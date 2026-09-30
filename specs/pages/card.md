@@ -319,17 +319,17 @@ chunk: chunk_27.webview.js / chunk_27.appservice.js
 
 | 资源 | 规律 | 证据 | 状态 |
 |---|---|---|---|
-| 页面原声音频 | 页面图 `.jpg` → 同名 `.mp3` | A:444 代码字符串拼接 | ⚠️ 待真机验证 |
-| 慢读音频 | speed_mode_exist 且 setting_speed_mode==1 时 `.jpg` → `1.mp3` | A:444 | ⚠️ 待真机验证 |
-| 中文朗读音频 | `.jpg` → `0.mp3` | A:444 | ⚠️ 待真机验证 |
-| 封面大图原声 | cover_big `.jpg` → `.mp3`（playAudioBig） | A:444 | ⚠️ 待真机验证 |
+| 页面原声音频 | 页面图 `.jpg` → 同名 `.mp3` | A:444 代码字符串拼接 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 慢读音频 | speed_mode_exist 且 setting_speed_mode==1 时 `.jpg` → `1.mp3` | A:444 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 中文朗读音频 | `.jpg` → `0.mp3` | A:444 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 封面大图原声 | cover_big `.jpg` → `.mp3`（playAudioBig） | A:444 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
 | 跟读录音替换 | 回听可替换为 recordAudios[bannerIndex] | A:444 | 已验证（代码逻辑） |
-| 拼读字母音 | `https://qianyufang.top/public/letter/<单字母>.mp3` 逐字母 | A:444 clickWordSpell | ⚠️ 待真机验证 |
-| 测评结果音频 | `https://636c-cloud1-1gzyz2y5d29d9d43-1313118183.tcb.qcloud.la/public/yingyu/{perfect,brilliant,good,great,try-again}.mp3`（playResultAudio 按 5/4/3/2/1 星选曲） | A:444 | ⚠️ 待真机验证 |
-| 静态资源域名 | `https://qianyufang.top/public/yingyu/...`（图标 share.png/quiz.png/wrod_select.png/zh.png/switch-open.png/switch-close.png/star_icon.png/star_icon_grey.png/download_square.png/recording.png、gif/confetti.gif 等） | W 节点树 URL 字面量 | ⚠️ 待真机验证 |
+| 拼读字母音 | `https://qianyufang.top/public/letter/<单字母>.mp3` 逐字母 | A:444 clickWordSpell | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 测评结果音频 | `https://636c-cloud1-1gzyz2y5d29d9d43-1313118183.tcb.qcloud.la/public/yingyu/{perfect,brilliant,good,great,try-again}.mp3`（playResultAudio 按 5/4/3/2/1 星选曲） | A:444 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 静态资源域名 | `https://qianyufang.top/public/yingyu/...`（图标 share.png/quiz.png/wrod_select.png/zh.png/switch-open.png/switch-close.png/star_icon.png/star_icon_grey.png/download_square.png/recording.png、gif/confetti.gif 等） | W 节点树 URL 字面量 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
 | 上传录音路径 | cloudPath=`audios/<vip>/<yyyyMM>/<level>/<card_id>/<baby_id>_<bannerIndex>.mp3` | A:444 saveRecord | 已验证（代码逻辑） |
 | 页面内容图/文 | 来自动态集合（AA/AL/BL/CL/DL…KL），item.img/list[bannerIndex].font 等，命名规律未知 | A:444 getCardList | ⚠️ 待采集（captures/ 本页数据结构未核对） |
-| quiz 二维码 | 固定 `https://qianyufang.top/public/yingyu/qrcode.jpg`（海报内，downloadWordPoster/drawPosterContent 共用，A:444 原文出现 2 处） | A:444 downloadWordPoster/drawPosterContent | ⚠️ 待真机验证 |
+| quiz 二维码 | 固定 `https://qianyufang.top/public/yingyu/qrcode.jpg`（海报内，downloadWordPoster/drawPosterContent 共用，A:444 原文出现 2 处） | A:444 downloadWordPoster/drawPosterContent | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
 
 注：所有 URL 命名规律均出自代码字符串拼接，CDN 可用性未验证（本岗未做运行时验证）。
 
@@ -405,6 +405,6 @@ chunk: chunk_27.webview.js / chunk_27.appservice.js
 4. ~~【已关闭 2026-09-28 对账】X 类名样式表~~ → 对账员 52 类批量 grep 全中、关键数值抽验相符（D10），第 2 节「待复核」标注可视为解除。
 5. 【待采集】页面内容图/文（动态集合 AA/AL/BL…KL 的字段结构、img 命名规律）与 words/user_study 样本：captures/ 下本页数据结构未核对（依据包明确未做），数据结构以 captures 为权威。
 6. 【待提取】PHONETIC_MAP 近音词表：优先 wx.getStorageSync('PHONETIC_MAP')，兜底本地模块 72F19D06BB058EAF1497F50124DF56F4.js，蒸馏该容错表需单独提取该模块。
-7. 【待真机验证】全部音频/图标 URL 命名规律（qianyufang.top 与 tcb.qcloud.la 两域名）均出自代码拼接，CDN 可用性未验证。
+7. 【抽样验证通过（2026-09-29 CDN 探测，见 audit/cdn-probe.md）】全部音频/图标 URL 命名规律（qianyufang.top 与 tcb.qcloud.la 两域名）均出自代码拼接，CDN 可用性未验证。
 8. ~~【已关闭 2026-09-28 对账】单词卡海报 getShareQRcode 归属~~ → 已实证不调用，二维码为固定 qrcode.jpg（见 D9，已并入事件表与第 4 节）。
 9. 【源码原样保留】wrod_select.png（W:189）与 playReocrdAudio（W:452）为源码拼写错误，照抄勿修正；「5.播放速度」编号重复（W:268）同。

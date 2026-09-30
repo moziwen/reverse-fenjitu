@@ -330,11 +330,11 @@ wordDetail：name / [{{yinbiao}}] / {{zh}} + clickWordAudio          (W:300-309)
 
 | 资源 | 规律 | 证据 | 状态 |
 |---|---|---|---|
-| 操作图标 | `https://qianyufang.top/public/yingyu/images/icon/<名>.png`，grep -o 逐条实测 18 种各 1 次（pause/play 各 2 次）：add/check/collect/collect_no/delete/download/download_round/download_square/more/next/pause/play/recording/switch/tip/voice/voice_on/yanhua | W `grep -o` 计数 | ⚠️ 待真机验证（只记规律，不猜可用性） |
-| 动效图 | 同域 `/images/gif/`：Trophy.gif(W:140)、like.gif(W:228) | W 行号实测 | ⚠️ 待真机验证 |
-| 引导轮播图 | tcb 云存储 `https://636c-cloud1-1gzyz2y5d29d9d43-1313118183.tcb.qcloud.la/public/word<N>.jpg`（N=1-5；wordImgs=[word1,word2]、wordImgs1=[word3,word5]、wordImgs2=[word3,word4]；word3 被 1/2 两处引用） | A:470 data 原文 grep 计数 word1/2/4/5 各 1、word3 共 2 | ⚠️ 待真机验证 |
-| 音效 | tcb `/public/yingyu/`：good.mp3 / try-again.mp3 / wrong.mp3 / huanhu.mp3（playGood/playTryAgain/playWrong/playHuanhu 四音效，A:470 方法名命中） | grep 计数各 1 | ⚠️ 待真机验证 |
-| 分享图（好友） | tcb `/public/yingyu/shareImg.png`（onShareAppMessage imageUrl） | grep 计数 1 | ⚠️ 待真机验证 |
+| 操作图标 | `https://qianyufang.top/public/yingyu/images/icon/<名>.png`，grep -o 逐条实测 18 种各 1 次（pause/play 各 2 次）：add/check/collect/collect_no/delete/download/download_round/download_square/more/next/pause/play/recording/switch/tip/voice/voice_on/yanhua | W `grep -o` 计数 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md）（只记规律，不猜可用性） |
+| 动效图 | 同域 `/images/gif/`：Trophy.gif(W:140)、like.gif(W:228) | W 行号实测 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 引导轮播图 | tcb 云存储 `https://636c-cloud1-1gzyz2y5d29d9d43-1313118183.tcb.qcloud.la/public/word<N>.jpg`（N=1-5；wordImgs=[word1,word2]、wordImgs1=[word3,word5]、wordImgs2=[word3,word4]；word3 被 1/2 两处引用） | A:470 data 原文 grep 计数 word1/2/4/5 各 1、word3 共 2 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 音效 | tcb `/public/yingyu/`：good.mp3 / try-again.mp3 / wrong.mp3 / huanhu.mp3（playGood/playTryAgain/playWrong/playHuanhu 四音效，A:470 方法名命中） | grep 计数各 1 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 分享图（好友） | tcb `/public/yingyu/shareImg.png`（onShareAppMessage imageUrl） | grep 计数 1 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
 | 分享图（朋友圈） | `https://qianyufang.top/public/yingyu/fenjitu.jpg`（onShareTimeline imageUrl，A:470 原文，与好友分享不同源） | A:470 `onShareTimeline:function(){return{…imageUrl:"https://qianyufang.top/public/yingyu/fenjitu.jpg"}}` | ❌ 已 404（2026-09-29 探测；原版引用失效资源，照抄路径、复现需自备替代图） |
 | 词库图片/音频 | 词数据 item.img / item.gif / audio_en / audio_zh 来自 words 集合字段，非本页硬编码（A:470 内 img 18 处、audio_en 14、audio_zh 4、extend 8；gif 仅在 W:395 三元里作为 wordPindu_detail.gif 属性引用） | A:470 计数 | — |
 
@@ -379,7 +379,7 @@ wordDetail：name / [{{yinbiao}}] / {{zh}} + clickWordAudio          (W:300-309)
 3. **bg-macron vs bg-macaron**：页面 wxss 只有 `.bg-macaron`（X:29），「再测一次」按钮类名是 `bg-macron`（W:166），定义在全局 page-frame.html（`--macron:#ff9b6a`）。还原按钮需依赖全局样式。
 4. **clickWordSpell 有效**：拼读 input-area 绑定 `clickWordSpell`（W:368），A:470 实测有定义（`clickWordSpell:function(){…isCompleted&&this.playWordSpell(t)}`，完成拼字后点击重听发音），非无效绑定。
 5. **单行压缩覆盖度**：A:470 共 45939 字符，本次按方法名正则全量提取 120 个唯一 `name:function`（含 success/fail/complete 等回调），并逐字抽查 onLoad/initSystemUI/onShow/onPullDownRefresh/checkUserQuizArr/getWordTestList/getWordShankaList/getRandomSubset/getCollectWordsIbhs/countPassRate/clickWordTest/addResult/tabSelect/getWordsPie/initPinduGame(Hard)/handleLetterTap/updatePinduData/drawCanvas/savePoster/goCardWord/clickWordExtend 等方法体；未逐字符通读全行，个别回调内部细节（如 listenNextWordAudio、extractString）未展开。
-6. **未跑动态验证**：无真机/CDP，以上全部来自 unpacked/ 静态产物；CDN/tcb 资源可达性、下拉刷新真机行为均 ⚠️ 待真机验证。
+6. **未跑动态验证**：无真机/CDP，以上全部来自 unpacked/ 静态产物；CDN/tcb 资源可达性、下拉刷新真机行为均 ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md）。
 7. **captures/ 数据对账缺失**：`captures/collections/` 目录当前为空（find 实测 0 个文件），user_study/words/user_data 三集合无 jsonl 真实样本，本页数据结构结论仅来自代码，与 AGENTS.md「数据结构唯一权威=captures」不符，待补采集后对账。
 
 ## 8. 本次实跑命令与声明

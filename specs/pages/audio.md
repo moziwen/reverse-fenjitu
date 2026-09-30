@@ -97,9 +97,9 @@ view.tui-safearea-bottom                               (op22)
 
 | 资源 | 规律 | 证据 | 状态 |
 |---|---|---|---|
-| 整卡音频 | `https://qianyufang.top/<level>/Audio/<card_id>.mp3` | chunk_28.appservice.js:70 getAudioDetail 拼接逻辑 | ⚠️ 待真机验证（域名可达性为本地推断） |
-| 封面图 | 云数据库 cover 字段值 `.jpg` → `.jpg` 前插入 `0`，即 `xxx.jpg → xxx0.jpg` | chunk_28.appservice.js:70 `cover.replace('.jpg','0.jpg')` | ⚠️ 待真机验证 |
-| 条目音频 | `lists[i].img` 字段值 `.jpg → .mp3`（中文路径需 decodeURIComponent + encodeURI 处理） | chunk_28.appservice.js:70 clickItem | ⚠️ 待真机验证 |
+| 整卡音频 | `https://qianyufang.top/<level>/Audio/<card_id>.mp3` | chunk_28.appservice.js:70 getAudioDetail 拼接逻辑 | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md）（域名可达性为本地推断） |
+| 封面图 | 云数据库 cover 字段值 `.jpg` → `.jpg` 前插入 `0`，即 `xxx.jpg → xxx0.jpg` | chunk_28.appservice.js:70 `cover.replace('.jpg','0.jpg')` | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
+| 条目音频 | `lists[i].img` 字段值 `.jpg → .mp3`（中文路径需 decodeURIComponent + encodeURI 处理） | chunk_28.appservice.js:70 clickItem | ✅ 抽样验证通过（2026-09-29 CDN 探测 20/20 + tcb 补测 7/8，见 audit/cdn-probe.md） |
 | 集合命名 | level 字母 + 'L'（A→AL…K→KL），默认 'AA' | chunk_28.appservice.js:70 getDatabaseLevel | 代码实证；集合内样本未核对 |
 
 说明：本次未核对 captures/ 样本，`lists[]` 条目字段结构（item.title / item.img）仅以代码引用为据（chunk_28.webview.js:66 op14 用 item.title；chunk_28.appservice.js:70 clickItem 用 item.img）。
