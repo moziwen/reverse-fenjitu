@@ -25,3 +25,18 @@ perfect/brilliant/good/great/try-again.mp3）仍建议单独探测一次（与 q
 是不同基础设施）。
 
 原始探测记录：`captures/tools/_cdn_probe_result.json` / 抽样清单 `_cdn_probe_list.json`。
+
+## 补充探测（2026-09-29）：tcb.qcloud.la 云存储（另一基础设施）
+
+| 文件 | 状态 | Content-Type | 大小 |
+|---|---|---|---|
+| perfect.mp3 | 200 | audio/mpeg | 37920 |
+| brilliant.mp3 | 200 | audio/mpeg | 36480 |
+| good.mp3 | 200 | audio/mpeg | 29760 |
+| great.mp3 | 200 | audio/mpeg | 20736 |
+| try-again.mp3 | 200 | audio/mpeg | 25920 |
+| wrong.mp3 | 200 | audio/mpeg | 6687 |
+| shareImg.png | 200 | image/png | 25229 |
+| fenjitu.jpg | ERR:HTTPError:HTTP Error 404: Not Found | — | — |
+
+结论：7/8 可达。存在不可达文件，相关 spec 标记保持。

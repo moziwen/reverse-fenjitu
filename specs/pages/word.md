@@ -335,7 +335,7 @@ wordDetail：name / [{{yinbiao}}] / {{zh}} + clickWordAudio          (W:300-309)
 | 引导轮播图 | tcb 云存储 `https://636c-cloud1-1gzyz2y5d29d9d43-1313118183.tcb.qcloud.la/public/word<N>.jpg`（N=1-5；wordImgs=[word1,word2]、wordImgs1=[word3,word5]、wordImgs2=[word3,word4]；word3 被 1/2 两处引用） | A:470 data 原文 grep 计数 word1/2/4/5 各 1、word3 共 2 | ⚠️ 待真机验证 |
 | 音效 | tcb `/public/yingyu/`：good.mp3 / try-again.mp3 / wrong.mp3 / huanhu.mp3（playGood/playTryAgain/playWrong/playHuanhu 四音效，A:470 方法名命中） | grep 计数各 1 | ⚠️ 待真机验证 |
 | 分享图（好友） | tcb `/public/yingyu/shareImg.png`（onShareAppMessage imageUrl） | grep 计数 1 | ⚠️ 待真机验证 |
-| 分享图（朋友圈） | `https://qianyufang.top/public/yingyu/fenjitu.jpg`（onShareTimeline imageUrl，A:470 原文，与好友分享不同源） | A:470 `onShareTimeline:function(){return{…imageUrl:"https://qianyufang.top/public/yingyu/fenjitu.jpg"}}` | ⚠️ 待真机验证 |
+| 分享图（朋友圈） | `https://qianyufang.top/public/yingyu/fenjitu.jpg`（onShareTimeline imageUrl，A:470 原文，与好友分享不同源） | A:470 `onShareTimeline:function(){return{…imageUrl:"https://qianyufang.top/public/yingyu/fenjitu.jpg"}}` | ❌ 已 404（2026-09-29 探测；原版引用失效资源，照抄路径、复现需自备替代图） |
 | 词库图片/音频 | 词数据 item.img / item.gif / audio_en / audio_zh 来自 words 集合字段，非本页硬编码（A:470 内 img 18 处、audio_en 14、audio_zh 4、extend 8；gif 仅在 W:395 三元里作为 wordPindu_detail.gif 属性引用） | A:470 计数 | — |
 
 ## 5. 弹窗 / 分支状态
@@ -401,7 +401,7 @@ wordDetail：name / [{{yinbiao}}] / {{zh}} + clickWordAudio          (W:300-309)
 - CDN/tcb 真机可达性、下拉刷新真机行为
 - captures/ 样本对账（目录为空，见 §6.7）
 
-## 8. 对账记录（对账员 2026-09-28 独立复核）
+## 9. 对账记录（对账员 2026-09-28 独立复核）
 
 对账方式：仅依据 unpacked/ 原文与本文档独立重推，未读蒸馏过程。核心手段：
 - `python` 解析 `$gwx_XC_42` 的 `_mz` 语义（定义在 unpacked/webview.app.js:740：attrs 序列首项索引为 base，后续属性取 `base+vi`；`Z(z[N])` 递归解引用），把 W:583-1586 全部 `_mz` 节点的事件/类名/src 逐条反解到 ops 字符串，与 §1 逐项比对。
@@ -412,7 +412,7 @@ wordDetail：name / [{{yinbiao}}] / {{zh}} + clickWordAudio          (W:300-309)
 
 | 核对项 | 结果 | 说明 |
 |---|---|---|
-| 节点树一致 | **基本一致，细节偏差 D1/D2/D4** | 骨架/分支/文案位置全部对上（557 个 Z ops 实测吻合）；偏差明细见 §8.6 |
+| 节点树一致 | **基本一致，细节偏差 D1/D2/D4** | 骨架/分支/文案位置全部对上（557 个 Z ops 实测吻合）；偏差明细见 §9.6 |
 | 类名抽查≥10 处全中 | **通过（实测 25 处）** | 见 §8.2 清单，25/25 在 X 命中 |
 | 文案逐字一致 | **通过** | 空态 9 条、图例 5 条、结果/按钮/海报文案逐字 grep 命中（含 \x22 转义的「+」） |
 | 事件与云函数清单齐全 | **通过，1 处绑定主体需更正** | A 侧 43 个 handler 除 clickRecord/closePopup（死 UI，§5 已如实标注）外全部命中且仅 1 次；20 次 callFunction/(name,tag) 对逐条核实；D3 更正 voice_on 绑定归属 |
@@ -489,6 +489,6 @@ python json：page["pages/word/word.html"].window 无 navigationStyle，标题�
 - **D4**：W:1341 实测 `_mz(z,'image',['bindtap',420,'class',1,'mode',2,'src',3])`，ops420=`clickWordName`（W:439）。spec §1.7 已改为 clickWordName 绑在 image（tui-slide-image）✓。
 - **资源补记（§4）**：A 侧 grep 实测 `onShareTimeline:function(){return{…imageUrl:"https://qianyufang.top/public/yingyu/fenjitu.jpg"}`（fenjitu.jpg 计数 1，shareImg.png 计数 1，两路不同源）。spec §4 已拆「分享图（好友）/分享图（朋友圈）」两行 ✓。
 
-篡改检查：第 6 节首轮对账记录、第 7 节「已知矛盾与待复核项」7 条、第 8 节 D1-D4 偏差清单与 FAIL 结论（§8.7）均原样在档，未发现删改或弱化。
+篡改检查：第 6 节首轮对账记录、第 7 节「已知矛盾与待复核项」7 条、第 8 节 D1-D4 偏差清单与 FAIL 结论（§9.7）均原样在档，未发现删改或弱化。
 
 **verdict=PASS**：D1-D4 修正全部经原文验证通过，Timeline 分享图补记确认，本 spec 进入待验收状态。

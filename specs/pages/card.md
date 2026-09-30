@@ -239,7 +239,7 @@ chunk: chunk_27.webview.js / chunk_27.appservice.js
 | .hidden-canvas | width:300px; height:540px; left:-9999px | 单词卡离屏画布（X:375） |
 | .close-btn | 30px 圆钮; right:30px; top:40px; z-index:10001 | 单词卡海报关闭（X:376-377） |
 
-依据包已核对关键选择器实际存在（如 .tui-product-title1 X:52、.audio-btn-1 X:378-380、.reward-card 区域 X:312-377）——本次蒸馏未逐行重跑 wxss 比对脚本，标记**待复核**（对账员类名抽查时覆盖）。
+依据包已核对关键选择器实际存在（.tui-product-title1 X:52、.audio-btn-1 X:378-380、.reward-card 区域 X:312-377 等）。~~待复核~~ **已解除**（对账员 D10：52 类批量 grep 全中、关键数值抽验逐值相符，2026-09-28）。
 
 依赖的全局类（ColorUI 等，page-frame.html setCssToHead，本次未展开）：.text-white / .text-macron / .text-xxl / .text-xl / .padding-xss / .bg-blue / .bg-img 相关 / .tui-gray / tui-* 组件类；组件样式（tui-icon/tui-tag/tui-bottom-popup/tui-top-dropdown/tui-modal/tui-list-cell/tui-radio-group/tui-label/tui-radio/tui-nomore）在 wxss_out/components__*.wxss（本页 tui-top-dropdown 在 wxss_out/components__tui-top-dropdown__tui-top-dropdown.wxss）。
 
