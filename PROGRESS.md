@@ -19,17 +19,17 @@
 | card | ✓ | ✓ | ✓ | |
 | cardTest | | | | |
 | cardQuiz | | | | |
-| report | | | | |
-| planList | | | | |
+| report | ✓ | ✓ | ✓ | |
+| planList | ✓ | ✓ | ✓ | |
 | planDetail | | | | |
-| planCreate | | | | |
+| planCreate | ✓ | ✓ | ✓ | |
 | word | ✓ | ✓ | ✓（第二轮收尾复核 PASS，2026-09-28） | |
 | wordExt | | | | |
 | listen | ✓ | ✓ | ✓ | |
 | audio | ✓ | ✓ | ✓ | |
 | search | | | | |
 | share | | | | |
-| more | | | | |
+| more | ✓ | ✓ | ✓ | |
 | group | | | | |
 | class | | | | |
 | help | | | | |
