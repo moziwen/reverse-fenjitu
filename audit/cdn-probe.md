@@ -1,5 +1,8 @@
 # CDN 抽样探测报告（qianyufang.top）
 
+> 另见用户侧独立探测 `audit/cdn-可达性探测.md`（24/24 可达，含音频三态 dog.mp3/dog0.mp3/dog1.mp3
+> 与封面 Cover/Big 双路径实测）——两份报告互为印证，结论一致：CDN 可用。
+
 > 时间：2026-09-29。方法：从 `captures/collections/units.jsonl`（全量 32 条，576 个唯一 URL）
 > 随机抽 20 个真实 URL（seed=42），HTTP HEAD 探测（超时 12s，5 并发）。
 > 动机：五页 spec（word/card/daka/listen/audio/unit）资源章节的「待真机验证」标记。
