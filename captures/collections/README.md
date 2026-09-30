@@ -69,6 +69,17 @@ appservice 上下文（context 3）调 `wx.cloud.database().collection(<n>).coun
 - words URL 100% qianyufang.top（audio_en `{basic}1.mp3` / audio_zh `{basic}0.mp3` 规律印证 spec）。
 - 第 4 天起 words 续拉（skip 320 起），若只需部分级别可按 level 过滤减天数。
 
+
+## 第 4 天（2026-09-29，配额提升至 1500/日，上午场 760 + 下午场 740）
+
+| 集合 | 今日 | 累计 | 余量 |
+|---|---|---|---|
+| words | 1,500 | **1,820** | 1,269（明日两场收尾） |
+
+- level 分布推进：AA 293 → A ~27+ → B/C/D…（skip 顺序 = level 排序，与 count 基准一致）
+- 同日两场（上午/下午各 ≤15 分钟、≤760/740 条），间隔 3~8s 不变，只读不变。
+- CDN 抽样探测 20/20 通过（见 audit/cdn-probe.md）。
+
 ## 采集纪律与计划（后续 jsonl 导出遵照 wxapp-cloud-export）
 
 - 只读（脚本零写调用）；间隔 3~8s 随机；**单日 ≤500 条**；单会话 ≤30 分钟；拆 3~5 天
