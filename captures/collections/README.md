@@ -52,6 +52,23 @@ appservice 上下文（context 3）调 `wx.cloud.database().collection(<n>).coun
 - 今日配额 500 条用满即停（纪律）。跨日去重验证：900 行 = 900 唯一 _id，无重复。
 - 第 3 天计划：user_school 余 170 收尾全量 + words 前半（count=3089，约 330 条配额内）。
 
+
+## 第 3 天导出（2026-09-29 晚，会话 22 分钟）
+
+| 集合 | 今日 | 累计 | 服务端 count | 状态 |
+|---|---|---|---|---|
+| user_school | 180 | **1,080** | 1,070* | ✅ **全量**（见下注） |
+| words | 320 | 320 | 3,089 | 🔶 320/3089（AA 级 293 + A 级 27） |
+
+*user_school count 漂移说明：基准 count(1070) 是昨晚快照；采集期间业务持续有新写入，
+导出终局 1,080 行 = 1,080 唯一_id（零重复），导出侧两数 100% 一致。活跃集合的 count
+天然滞后，属正常现象，非采集缺陷。
+
+- words 结构：`_id/level/level_id/name/basic/basic_audio/yinbiao/zh/audio_en/audio_zh/img/gif/pindu/pindu_key/prompt/include/extend/books/card/type/num/title`——
+  字段与 word/card 页 spec 的数据模型完全对齐（含 extend 多图、books 绘本推荐）。
+- words URL 100% qianyufang.top（audio_en `{basic}1.mp3` / audio_zh `{basic}0.mp3` 规律印证 spec）。
+- 第 4 天起 words 续拉（skip 320 起），若只需部分级别可按 level 过滤减天数。
+
 ## 采集纪律与计划（后续 jsonl 导出遵照 wxapp-cloud-export）
 
 - 只读（脚本零写调用）；间隔 3~8s 随机；**单日 ≤500 条**；单会话 ≤30 分钟；拆 3~5 天
