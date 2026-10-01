@@ -94,6 +94,10 @@
 | updateUserPlan | quiz | POST /api/v1/plan/quiz | 打卡计划测验回写（daka_current 定位任务） | cardTest | 已验证 |
 | updateUserStudy | wordsAddQuiz | POST /api/v1/word/wrong-book | 错词入测验本（elemMatch 去重） | cardTest | 已验证 |
 | collectWord | POST /api/v1/word/collect | 单词收藏（word_detail 全量+timestamp，elemMatch 查重） | wordExt | 已验证 |
+| updateUserSchool | unitQuizUpdate | POST /api/v1/school/unit-quiz | 单元测验星回写（仅新 unitStar > 旧值才上调） | unitQuiz | 已验证 |
+| updateUserSchool | test | POST /api/v1/school/words-backfill | unit_6_60 扩展词回填（疑似调试遗留，2s 后无条件触发） | school | 已验证 |
+| updateMemberVip | vipNeedPay / vipExpire / vipAdd / vipUpdate | POST /api/v1/member/vip | 会员状态四分支（试用限额/到期/购买/续费） | index | 已验证 |
+| getPhoneticMap | — | POST /api/v1/config/phonetic-map | 音标映射表版本号缓存（init 集合 phonetic_config） | index | 已验证 |
 | updateUserSchool | updateWordStar | POST /api/v1/school/word-star | 单词星级 | unit | 已验证 |
 | updateUserSchool | updateUnitWords | POST /api/v1/school/unit-words | 单元词星覆盖 | unit | 已验证 |
 | updateUserSchool | （直连 add） | POST /api/v1/school/units | 新建课内学习记录 | unit | 已验证 |
