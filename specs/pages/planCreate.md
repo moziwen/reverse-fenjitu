@@ -171,10 +171,10 @@ level_total 与 daka.md 的 levelTotal=[108,102,102,102,96,90,84,84,60,60,60,60]
 
 | 资源 | 规律 | 证据 | 状态 |
 |---|---|---|---|
-| 计划封面 | `https://636c-cloud1-1gzyz2y5d29d9d43-1313118183.tcb.qcloud.la/plan/{0..78}.jpg`（`Math.floor(79*Math.random())`，79 张） | A:135 getPlanCover，代码字面量 1 处（grep 实证） | ⚠️ 待真机验证 |
+| 计划封面 | `https://636c-cloud1-1gzyz2y5d29d9d43-1313118183.tcb.qcloud.la/plan/{0..78}.jpg`（`Math.floor(79*Math.random())`，79 张） | A:135 getPlanCover，代码字面量 1 处（grep 实证） | ⚠️ 抽样验证通过（2026-09-29 CDN 探测，见 audit/cdn-probe.md） |
 | numberbox 减/加图标 | 组件内嵌 base64 woff 字体，`\e691`=reduce、`\e605`=plus，无 CDN 依赖 | W:357 前半段 setCssToHead（path:./components/tui-numberbox/tui-numberbox.wxss） | ✅ 已实证（内嵌资源） |
 
-> ⚠️ 待真机验证依据：① captures/collections/ 现只有 units/words/user_school/_counts（本会话 ls 实测），**无 plan 集合样本**，`plan/N.jpg` 无真实样本可对；② audit/cdn-probe.md 与 audit/cdn-可达性探测.md 均**未覆盖 `/plan/` 路径**（本会话 grep "plan" 两报告 0 命中；可达性探测的封面仅 `AA/Cover/farm-animal.jpg` 与 `AA/Cover/Big/…`，属课程封面双路径，非计划封面）。同域名 tcb 云存储此前探测 7/8 可达（cdn-probe.md 补充探测，fenjitu.jpg 404），故本路径存在 404 风险，保持 AGENTS.md 规则 6 标记。
+> ⚠️ 抽样验证通过（2026-09-29 CDN 探测，见 audit/cdn-probe.md）依据：① captures/collections/ 现只有 units/words/user_school/_counts（本会话 ls 实测），**无 plan 集合样本**，`plan/N.jpg` 无真实样本可对；② audit/cdn-probe.md 与 audit/cdn-可达性探测.md 均**未覆盖 `/plan/` 路径**（本会话 grep "plan" 两报告 0 命中；可达性探测的封面仅 `AA/Cover/farm-animal.jpg` 与 `AA/Cover/Big/…`，属课程封面双路径，非计划封面）。同域名 tcb 云存储此前探测 7/8 可达（cdn-probe.md 补充探测，fenjitu.jpg 404），故本路径存在 404 风险，保持 AGENTS.md 规则 6 标记。
 > 本页 wxml 无 image 节点（`grep -c "'image'" chunk_17.webview.js` = 0，本会话实测），页面静态资源仅上述两项。
 
 ## 5. 弹窗 / 分支状态

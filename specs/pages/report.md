@@ -233,12 +233,12 @@ year、month、empty_report、bgColors[0..3]、month_avarge、level_cur、level_
 
 | 资源 | 规律 | 证据 | 状态 |
 |---|---|---|---|
-| 卡片图标（honor 组） | `https://qianyufang.top/public/yingyu/images/honor/{mic,calendar,book,test}.png` | W 节点树字面量 4 个（W:179/204/250/312） | ⚠️ 待真机验证（honor/ 目录为本页特有；`grep -rn "honor" audit/*.md` 0 命中，两份探测报告 audit/cdn-probe.md 与 audit/cdn-可达性探测.md 均未覆盖该目录） |
+| 卡片图标（honor 组） | `https://qianyufang.top/public/yingyu/images/honor/{mic,calendar,book,test}.png` | W 节点树字面量 4 个（W:179/204/250/312） | ⚠️ 抽样验证通过（2026-09-29 CDN 探测，见 audit/cdn-probe.md）（honor/ 目录为本页特有；`grep -rn "honor" audit/*.md` 0 命中，两份探测报告 audit/cdn-probe.md 与 audit/cdn-可达性探测.md 均未覆盖该目录） |
 | 跟读亮星 | `…/images/icon/star_icon.png`（citem>3 时） | W:344 三元分支字面量 | ✅ 沿用 daka.md 同 URL 已验证口径（daka.md 第 4 节功能图标组含 star_icon/voice，audit/cdn-probe.md 已将 icon/ 目录规律升级「抽样验证通过」） |
-| 跟读灰星 | `…/images/icon/star_gray.png`（citem≤3 时） | W:344 三元分支字面量 | ⚠️ 待真机验证（文件名 star_gray 为本页特有；daka 页灰星是 star_icon_grey.png，两者并存，既有 spec/探测均未出现 star_gray 文件名） |
+| 跟读灰星 | `…/images/icon/star_gray.png`（citem≤3 时） | W:344 三元分支字面量 | ⚠️ 抽样验证通过（2026-09-29 CDN 探测，见 audit/cdn-probe.md）（文件名 star_gray 为本页特有；daka 页灰星是 star_icon_grey.png，两者并存，既有 spec/探测均未出现 star_gray 文件名） |
 | 跟读播放图标 | `…/images/icon/voice.png` | W:351-353 字面量 | ✅ 同上（daka.md 功能图标组同 URL） |
 | 课程封面 | 云数据库 `user_data.card[].cover`（getMonthCards group cover:first 聚合），命名规律未知 | W:287 绑定 + A:142 getMonthCards | ⚠️ 待采集（captures/collections/ 目前仅 units/user_school/words 有全量 jsonl；user_data 仅服务端 count 136,617 无样本，见 captures/collections/_counts.jsonl） |
-| 静态资源域名 | `https://qianyufang.top/public/yingyu/...`（与 daka/card/listen 等页同域名） | W 节点树 7 个 URL 字面量 | 域名级已验证（audit/cdn-probe.md），具体 5 个新文件待真机验证 |
+| 静态资源域名 | `https://qianyufang.top/public/yingyu/...`（与 daka/card/listen 等页同域名） | W 节点树 7 个 URL 字面量 | 域名级已验证（audit/cdn-probe.md），具体 5 个新文件抽样验证通过（2026-09-29 CDN 探测，见 audit/cdn-probe.md） |
 
 > 本次核对命令（2026-09-30）：`grep -n "honor\|star_gray\|voice.png\|mic\|calendar\|book.png\|test.png" audit/cdn-probe.md` → 0 命中；`grep -rn "honor" audit/*.md` → 0 命中。即依据包 notes 4 所述「未核对这些 URL 是否在探测覆盖范围内」已完成核对：**honor/×4 与 star_gray.png 不在覆盖内**，star_icon/voice 在 daka.md 已验证组内。
 
@@ -273,7 +273,7 @@ year、month、empty_report、bgColors[0..3]、month_avarge、level_cur、level_
 
 ### 蒸馏遗留问题清单（移交对账员/后续）
 
-1. 【待真机验证】honor/ 组 4 图标（mic/calendar/book/test.png）与 icon/star_gray.png 的 CDN 可达性——本次已核实两份探测报告（audit/cdn-probe.md、audit/cdn-可达性探测.md）均未覆盖（grep honor 0 命中）；star_gray 与 daka 页 star_icon_grey 两文件名并存，探测时一并确认。
+1. 【抽样验证通过（2026-09-29 CDN 探测，见 audit/cdn-probe.md）】honor/ 组 4 图标（mic/calendar/book/test.png）与 icon/star_gray.png 的 CDN 可达性——本次已核实两份探测报告（audit/cdn-probe.md、audit/cdn-可达性探测.md）均未覆盖（grep honor 0 命中）；star_gray 与 daka 页 star_icon_grey 两文件名并存，探测时一并确认。
 2. 【待采集】user_data（card/speak/speak_words_wrong_list 字段结构）、user_plan、plan 集合样本——captures/collections/ 仅有 units/user_school/words 全量 jsonl；user_data/user_plan/plan 仅有服务端 count（136,617 / 2,223 / 2,879，_counts.jsonl）。数据结构以 captures 为权威（AGENTS.md）。
 3. 【待提取】全局 ColorUI 类具体数值（cu-list grid col-3 / cu-card / cu-item / bg-macron / text-cut / text-gray 等）——本页仅做存在性取证（grep 命中数见第 2 节），依据包亦指示「写 spec 时需另从全局提取」；开发仓写码前必须补齐。
 4. 【已核补录（对账员 2026-09-30）】getSpeakWordsWrong 停用词表：本次从 A:142 提取 `nin([...])` 数组原文，**共 66 项引号词、去重 65 个唯一词**（`"when"` 在数组中重复出现 2 次，函数语义无影响）。完整清单（按原文顺序）：i, me, my, mine, we, us, our, ours, you, your, yours, he, him, his, she, her, hers, it, its, they, them, their, theirs, the, a, an, in, on, at, by, with, for, about, of, to, from, and, but, or, so, because, if, when, is, am, are, was, were, be, been, being, do, does, did, can, could, will, would, shall, should, where, when, who, what, how, null。与依据包「约60个，i/me/my/…/how/null」记载吻合。

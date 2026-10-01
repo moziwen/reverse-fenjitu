@@ -63,6 +63,7 @@
 | wordNum | POST /api/v1/word/num | 单词数更新 | word, card | 已验证 |
 | wordPindu | POST /api/v1/word/pindu | 拼读结果 | word | 已验证 |
 | wordFuxiNew / wordFuxiUpdate | POST /api/v1/word/fuxi | 复习新建/更新 | word | 已验证 |
+| updateGroupID | POST /api/v1/user/group-id | 同步 user_data.groupID（入班时） | group | 已验证 |
 | cardPush / cardNumUpdate / cardAdd | POST /api/v1/card/study | 绘本学习推送/计数 | card | 已验证 |
 | speakPush / speakStarUpdate / speakWcpmUpdate / singleSpeakTodayUpdate | POST /api/v1/speak/record | 跟读测评回写 | card | 已验证 |
 | （其余 tag） | — | 待 21 页蒸馏补全 | — | 推断未验证 |
@@ -76,6 +77,9 @@
 | deleteWord | DELETE /api/v1/quiz/{wordId} | 测验列表移除 | word | 已验证 |
 | monthDaysAdd | POST /api/v1/calendar/days | 月打卡天数 | word, listen, card | 已验证 |
 | listenUpdate | POST /api/v1/listen/days | 听力艾宾浩斯 | listen | 已验证 |
+| createGroup | POST /api/v1/group/join | 入班（baby_id+groupID） | group | 已验证 |
+| plan | POST /api/v1/group/plan | 班内计划写回 | group | 已验证 |
+| quitGroup | POST /api/v1/group/quit | 退班（×2 调用点） | group | 已验证 |
 | recordUpdate / levelAdd / levelUpdate / voiceSpeedSet / recordAudio / wordsAddQuiz | POST /api/v1/study/* | 阅读记录/级别进度/语速/录音 | card | 已验证 |
 
 ### updateUserQuiz / updateUserSchool（489 新增）

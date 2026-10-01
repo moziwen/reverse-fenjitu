@@ -27,13 +27,13 @@
 | wordExt | | | | |
 | listen | ✓ | ✓ | ✓ | |
 | audio | ✓ | ✓ | ✓ | |
-| search | | | | |
-| share | | | | |
+| search | ✓ | ✓ | ✓（第二轮收尾复核 PASS，2026-10-01） | |
+| share | ✓ | ✓ | ✓ | |
 | more | ✓ | ✓ | ✓ | |
-| group | | | | |
+| group | ✓ | ✓ | ✓ | |
 | class | | | | |
-| help | | | | |
-| set | | | | |
+| help | ✓ | ✓ | ✓ | |
+| set | ✓ | ✓ | ✓ | |
 | school（489 新增） | | | | |
 | unit（489 新增） | ✓ | ✓ | ✓ | |
 | unitQuiz（489 新增） | | | | |

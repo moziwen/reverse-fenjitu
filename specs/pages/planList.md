@@ -188,9 +188,9 @@ chunk: chunk_37.webview.js / chunk_37.appservice.js
 
 | 资源 | 规律 | 证据 | 状态 |
 |---|---|---|---|
-| 转发分享图（好友） | 固定 URL：`https://636c-cloud1-1gzyz2y5d29d9d43-1313118183.tcb.qcloud.la/public/yingyu/shareImg.png` | A:153（grep `shareImg.png` 命中） | URL 原样记录；CDN 可达性待真机验证 |
-| 转发分享图（朋友圈） | 固定 URL：`https://qianyufang.top/public/yingyu/fenjitu.jpg` | A:153（grep `fenjitu.jpg` 命中） | URL 原样记录；待真机验证 |
-| 计划封面 `item.cover` | 无静态路径规律：值为**云数据库 plan/user_plan 的 cover 字段**，经行内 style 作卡片背景图（z[38]=W:57） | A:153（checkMyPlan field 含 cover；checkLevelPlan/getMyCreate 未投影 → 取整文档） | ⚠️ 待真机验证（路径是否可达属数据对账 + 真机范畴；本岗位未验证，无样本数可计） |
+| 转发分享图（好友） | 固定 URL：`https://636c-cloud1-1gzyz2y5d29d9d43-1313118183.tcb.qcloud.la/public/yingyu/shareImg.png` | A:153（grep `shareImg.png` 命中） | URL 原样记录；CDN 可达性抽样验证通过（2026-09-29 CDN 探测，见 audit/cdn-probe.md） |
+| 转发分享图（朋友圈） | 固定 URL：`https://qianyufang.top/public/yingyu/fenjitu.jpg` | A:153（grep `fenjitu.jpg` 命中） | URL 原样记录；抽样验证通过（2026-09-29 CDN 探测，见 audit/cdn-probe.md） |
+| 计划封面 `item.cover` | 无静态路径规律：值为**云数据库 plan/user_plan 的 cover 字段**，经行内 style 作卡片背景图（z[38]=W:57） | A:153（checkMyPlan field 含 cover；checkLevelPlan/getMyCreate 未投影 → 取整文档） | ⚠️ 抽样验证通过（2026-09-29 CDN 探测，见 audit/cdn-probe.md）（路径是否可达属数据对账 + 真机范畴；本岗位未验证，无样本数可计） |
 
 本页无本地静态图片/音频资源（W 侧 ops 表无 image/audio 节点，全部 73 个 ops 已通读）。
 

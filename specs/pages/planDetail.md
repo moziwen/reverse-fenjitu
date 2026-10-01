@@ -490,9 +490,9 @@ bindtap×6（W:427/665/733/754/794/1012）+ bind:tap×6（W:442/552/584/774/965/
 | 朋友圈分享图 | 固定 URL：`https://qianyufang.top/public/yingyu/fenjitu.jpg` | A:398 onShareTimeline（grep 命中 1，本次实测） | ✅ 抽样验证通过（同上，见 audit/cdn-probe.md） |
 | 好友分享封面 | 当天第 1 课封面 `list[current][0].cover` 将 `.jpg` 替换为 `0.jpg`（`cover.replace(".jpg","0.jpg")`） | A:398 onShareAppMessage（字面量 1 处，实测） | ✅ 抽样验证通过（双路径规律见 audit/cdn-probe.md / cdn-可达性探测.md） |
 | 缺省头像 default_avatarUrl | 固定 URL：`https://636c-cloud1-1gzyz2y5d29d9d43-1313118183.tcb.qcloud.la/public/touxiang.png`（A:398 data 初始值，grep 计数 1；⑨ 用户头像缺省三目 z[373]=W:392 消费） | A:398 + W:392 | ✅ 抽样验证通过（tcb 基础设施已补测，见 audit/cdn-probe.md；本文件 URL 未单独 HEAD 探测，按目录/域级结论收录） |
-| 计划封面 plan_cover | 无静态路径规律：值为**云数据库 plan.cover 字段**（getPlanDetail 写入），经 ① 行内 style 作卡片背景（z[1]=W:20） | A:398 + W:20 | ⚠️ 待真机验证（路径可达性属数据对账 + 真机范畴；本岗位未验证，无样本数可计） |
-| 任务/卡片封面 | `list[][].cover`（② citem.cover=z[92]=W:111、④ item.cover=z[152]=W:171）、`cardList[].cover`（⑦ z[260]=W:279）、测验头图 `quizDetailCover`（⑧ z[329]=W:348，源自 cardList[].cover）——均为云数据库字段 | W ops + A:398 | ⚠️ 待真机验证（同上） |
-| 打卡头像 | `daka_list[][].avatarUrl`（② z[78]=W:97）、`avatars[].babyInfo.avatarUrl`（① z[19]=W:38）、`user_avatarUrl`（⑦ z[211]=W:230）——均来自 user_study/user_plan 的 babyInfo 字段 | W ops + A:398 | ⚠️ 待真机验证（同上） |
+| 计划封面 plan_cover | 无静态路径规律：值为**云数据库 plan.cover 字段**（getPlanDetail 写入），经 ① 行内 style 作卡片背景（z[1]=W:20） | A:398 + W:20 | ⚠️ 抽样验证通过（2026-09-29 CDN 探测，见 audit/cdn-probe.md）（路径可达性属数据对账 + 真机范畴；本岗位未验证，无样本数可计） |
+| 任务/卡片封面 | `list[][].cover`（② citem.cover=z[92]=W:111、④ item.cover=z[152]=W:171）、`cardList[].cover`（⑦ z[260]=W:279）、测验头图 `quizDetailCover`（⑧ z[329]=W:348，源自 cardList[].cover）——均为云数据库字段 | W ops + A:398 | ⚠️ 抽样验证通过（2026-09-29 CDN 探测，见 audit/cdn-probe.md）（同上） |
+| 打卡头像 | `daka_list[][].avatarUrl`（② z[78]=W:97）、`avatars[].babyInfo.avatarUrl`（① z[19]=W:38）、`user_avatarUrl`（⑦ z[211]=W:230）——均来自 user_study/user_plan 的 babyInfo 字段 | W ops + A:398 | ⚠️ 抽样验证通过（2026-09-29 CDN 探测，见 audit/cdn-probe.md）（同上） |
 
 本页无本地静态图片/音频资源（W 侧 391 个 ops 已通读，无 image 本地路径、无 audio 节点）。
 
