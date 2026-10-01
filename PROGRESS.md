@@ -17,7 +17,7 @@
 | index | | | | |
 | daka | ✓ | ✓ | ✓ | |
 | card | ✓ | ✓ | ✓ | |
-| cardTest | | | | |
+| cardTest | ✓ | ✓ | ✓ | |
 | cardQuiz | | | | |
 | report | ✓ | ✓ | ✓ | |
 | planList | ✓ | ✓ | ✓ | |

@@ -63,6 +63,7 @@
 | wordNum | POST /api/v1/word/num | 单词数更新 | word, card | 已验证 |
 | wordPindu | POST /api/v1/word/pindu | 拼读结果 | word | 已验证 |
 | wordFuxiNew / wordFuxiUpdate | POST /api/v1/word/fuxi | 复习新建/更新 | word | 已验证 |
+| cardQuizAdd / cardQuizPush / cardQuizNumUpdate | POST /api/v1/card/quiz | 测验记录新建/推送/更新（三分支按当日记录与卡片去重） | cardTest | 已验证 |
 | updateGroupID | POST /api/v1/user/group-id | 同步 user_data.groupID（入班时） | group | 已验证 |
 | cardPush / cardNumUpdate / cardAdd | POST /api/v1/card/study | 绘本学习推送/计数 | card | 已验证 |
 | speakPush / speakStarUpdate / speakWcpmUpdate / singleSpeakTodayUpdate | POST /api/v1/speak/record | 跟读测评回写 | card | 已验证 |
@@ -89,6 +90,9 @@
 | updateUserQuiz | updateQuizPassNum | POST /api/v1/quiz/pass | 测验通过计数 | word | 已验证 |
 | updateUserQuiz | updatePindu | POST /api/v1/quiz/pindu | 拼读结果 | word | 已验证 |
 | updateUserQuiz | updateQuizFuxi | POST /api/v1/quiz/fuxi | 复习检测 | word | 已验证 |
+| updateUserQuiz | newLevelPass / updateLevelPass | POST /api/v1/quiz/level-pass | 级别通过新建/追加（user_study.<level> 结构） | cardTest | 已验证 |
+| updateUserPlan | quiz | POST /api/v1/plan/quiz | 打卡计划测验回写（daka_current 定位任务） | cardTest | 已验证 |
+| updateUserStudy | wordsAddQuiz | POST /api/v1/word/wrong-book | 错词入测验本（elemMatch 去重） | cardTest | 已验证 |
 | updateUserSchool | updateWordStar | POST /api/v1/school/word-star | 单词星级 | unit | 已验证 |
 | updateUserSchool | updateUnitWords | POST /api/v1/school/unit-words | 单元词星覆盖 | unit | 已验证 |
 | updateUserSchool | （直连 add） | POST /api/v1/school/units | 新建课内学习记录 | unit | 已验证 |
