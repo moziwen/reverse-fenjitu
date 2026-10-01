@@ -93,6 +93,7 @@
 | updateUserQuiz | newLevelPass / updateLevelPass | POST /api/v1/quiz/level-pass | 级别通过新建/追加（user_study.<level> 结构） | cardTest | 已验证 |
 | updateUserPlan | quiz | POST /api/v1/plan/quiz | 打卡计划测验回写（daka_current 定位任务） | cardTest | 已验证 |
 | updateUserStudy | wordsAddQuiz | POST /api/v1/word/wrong-book | 错词入测验本（elemMatch 去重） | cardTest | 已验证 |
+| collectWord | POST /api/v1/word/collect | 单词收藏（word_detail 全量+timestamp，elemMatch 查重） | wordExt | 已验证 |
 | updateUserSchool | updateWordStar | POST /api/v1/school/word-star | 单词星级 | unit | 已验证 |
 | updateUserSchool | updateUnitWords | POST /api/v1/school/unit-words | 单元词星覆盖 | unit | 已验证 |
 | updateUserSchool | （直连 add） | POST /api/v1/school/units | 新建课内学习记录 | unit | 已验证 |
