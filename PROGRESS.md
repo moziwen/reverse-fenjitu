@@ -18,7 +18,7 @@
 | daka | ✓ | ✓ | ✓ | |
 | card | ✓ | ✓ | ✓ | |
 | cardTest | ✓ | ✓ | ✓ | |
-| cardQuiz | | | | |
+| cardQuiz | ✓ | ✓ | ✓ | |
 | report | ✓ | ✓ | ✓ | |
 | planList | ✓ | ✓ | ✓ | |
 | planDetail | ✓ | ✓ | ✓ | |
@@ -36,7 +36,7 @@
 | set | ✓ | ✓ | ✓ | |
 | school（489 新增） | ✓ | ✓ | ✓ | |
 | unit（489 新增） | ✓ | ✓ | ✓ | |
-| unitQuiz（489 新增） | | | | |
+| unitQuiz（489 新增） | ✓ | ✓ | ✓ | |
 | unitStudy（489 新增） | | | | |
 | vip | | | | |
 | jigou | | | | |
