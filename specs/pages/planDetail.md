@@ -9,7 +9,7 @@ chunk: chunk_36.webview.js / chunk_36.appservice.js
 # 页面还原规格：打卡计划详情（pages/planDetail/planDetail）
 
 > 本文件由蒸馏工产出，每条结论必须带证据。前端 page-restorer 只读本文件写码。
-> 证据标注：W=unpacked/chunk_36.webview.js（`wc -l`=1222 行、`grep -c ""`=1223，末尾 1 空行，本次双口径实测），A=unpacked/chunk_36.appservice.js（399 行；`sed -n '395,399p'` 实测 :397 define 行、:398 Page 主体单行 15673 字节、:399 选项行，本次 `awk length` 实测），X=unpacked/wxss_out/pages__planDetail__planDetail.wxss（385 行，本次抽读关键行），C=unpacked/app-config.json（node 解析），合并副本=unpacked/app-service.js（:51 页面 json、:6382-6384 Page 副本，本次实测）。
+> 证据标注：W=unpacked/chunk_36.webview.js（`wc -l`=1222 行、`grep -c ""`=1223，末尾 1 空行，本次双口径实测），A=unpacked/chunk_36.appservice.js（399 行；`sed -n '395,399p'` 实测 :397 define 行、:398 Page 主体单行 15673 字符（16201 UTF-8 字节数）、:399 选项行，本次 `awk length` 实测），X=unpacked/wxss_out/pages__planDetail__planDetail.wxss（385 行，本次抽读关键行），C=unpacked/app-config.json（node 解析），合并副本=unpacked/app-service.js（:51 页面 json、:6382-6384 Page 副本，本次实测）。
 > 定位命令与输出：`grep -l "'./pages/planDetail/planDetail.wxml'" unpacked/chunk_*.webview.js` → 唯一命中 unpacked/chunk_36.webview.js；复核 W:414 `var x=['./pages/planDetail/planDetail.wxml']`、W:1220 `__wxAppCode__['pages/planDetail/planDetail.wxml'] = $gwx_XC_30(...)`、W:1222 页面 wxss setCssToHead（`(./pages/planDetail/planDetail.wxss:1:29950)`）。
 >
 > **⚠ _mz 索引坑（已按 SKILL 规则换算，并与 ops 表逐条对上）**：`_mz(z,'view',['class',0,'style',1],[])`（W:417）中，首个属性取其印出的数字为 ops 下标，后续属性为「首下标 + 连续偏移」。如 W:427 `['bindtap',6,'color',1,'name',2,'size',3]` → bindtap=z[6]、color=z[7]、name=z[8]、size=z[9]，与 z 定义行逐一吻合（z[6]=W:25 'editTitle'、z[7]=W:26 '#5677fc'、z[8]=W:27 'edit'、z[9]=W:28 '32'）。全文件 67 处 `_mz`（本次 `grep -o "_mz(" | wc -l` 实测，67 行各 1 处，行号 417…1188）均按此换算。
@@ -382,7 +382,7 @@ chunk: chunk_36.webview.js / chunk_36.appservice.js
 
 ## 3. 事件与逻辑
 
-来源：`chunk_36.appservice.js`（A:397 `;__wxRoute="pages/planDetail/planDetail";…define("pages/planDetail/planDetail.js",…)`；A:398 Page 主体单行 15673 字节；A:399 `{isPage:true,isComponent:true,currentFile:'pages/planDetail/planDetail.js'}`——以上本次 sed/awk 实测；合并副本 app-service.js:6382-6384 同文实测）。页面头部：`var e=wx.cloud.database({}), i=e.command, s=getApp(); var d=require("../../A2AAD201BB058EAFC4CCBA0673FF56F4.js")`（A:398 实测；该模块导出 formatTime/formatMonth/formatDate/formatHour，unpacked/appservice.app.js:1383 实测）。
+来源：`chunk_36.appservice.js`（A:397 `;__wxRoute="pages/planDetail/planDetail";…define("pages/planDetail/planDetail.js",…)`；A:398 Page 主体单行 15673 字符（16201 UTF-8 字节数）；A:399 `{isPage:true,isComponent:true,currentFile:'pages/planDetail/planDetail.js'}`——以上本次 sed/awk 实测；合并副本 app-service.js:6382-6384 同文实测）。页面头部：`var e=wx.cloud.database({}), i=e.command, s=getApp(); var d=require("../../A2AAD201BB058EAFC4CCBA0673FF56F4.js")`（A:398 实测；该模块导出 formatTime/formatMonth/formatDate/formatHour，unpacked/appservice.app.js:1383 实测）。
 
 ### data 初始值（A:398，本次 grep 原文提取）
 直接字面量：`default_avatarUrl:"https://636c-cloud1-1gzyz2y5d29d9d43-1313118183.tcb.qcloud.la/public/touxiang.png"`、`title:""`、`total:1`、`list:[]`、`plan_id:""`、`plan_cover:""`、`group_id:""`、`group_index:-1`、`add_time:0`、`current:0`、`day:0`、`day_late:0`。
@@ -543,7 +543,7 @@ bindtap×6（W:427/665/733/754/794/1012）+ bind:tap×6（W:442/552/584/774/965/
 - #4 ✓ A:398 addGroupPlan 原文 success 挂在 group update 上：`success:function(a){wx.showToast({title:"添加成功"}),wx.reLaunch({url:"../class/class"})}`；§3 条与原文一致（plan update 无 success 挂点，记录口径正确）。
 - #5 ✓ A:398 showLevelList 原文无 `.skip()/.limit()`，为 `t=20*a.data.pageIndex,s=(a.data.pageIndex+1)*20` → `where({index:i.and(i.gte(t),i.lt(s))}).orderBy("index","asc").field({_id:!1,id:!0,title:!0,cover:!0})`——范围分页表达式与 orderBy/field 逐字吻合；§3 条一致（含 `lists_level.length>=lelvel_total → isShowAllList:true`）。
 - #6 ✓ `.text-s{` page-frame.html 0 命中、X 侧 `.text-s` 0 命中（死类，依赖清单已删）；`.text-df` page-frame setCssToHead 有定义（`"text-df{font-size:",[0,28],"}"` 拼接形态）；`.tui-gray` X:15（#999,13px）与 X:336（#848484!important）双定义。依赖清单与增删说明均与实测一致。
-- **篡改检查**：本节对账内容（四项勾选、6 条 diff 表、FAIL 结论段）未被改动；其数字声明本次重跑全数命中（`sed -n '19,409p' | grep -c "^Z("` = 391、tui-nomore 8、tui-loadmore 0、callFunction 4、collection plan 6/user_plan 6/user_study 2/group 2、A 侧 `grep -c "gwx_XC_30"` = 11、A:398 = 15673 字节、hideModal1/hideModal2 函数体与 hideModal `setData({modalUser:!1,modalAll:!1})` 原文逐字在、quitUserPlan 载荷（time: formatTime+" "+formatHour、`list: day>0?list:[]`）同文）。蒸馏工修正记录为结论段之后的独立追加段，未触碰上文。
+- **篡改检查**：本节对账内容（四项勾选、6 条 diff 表、FAIL 结论段）未被改动；其数字声明本次重跑全数命中（`sed -n '19,409p' | grep -c "^Z("` = 391、tui-nomore 8、tui-loadmore 0、callFunction 4、collection plan 6/user_plan 6/user_study 2/group 2、A 侧 `grep -c "gwx_XC_30"` = 11、A:398 = 15673 字符（16201 UTF-8 字节数）、hideModal1/hideModal2 函数体与 hideModal `setData({modalUser:!1,modalAll:!1})` 原文逐字在、quitUserPlan 载荷（time: formatTime+" "+formatHour、`list: day>0?list:[]`）同文）。蒸馏工修正记录为结论段之后的独立追加段，未触碰上文。
 - **非阻塞残留备案（不影响 verdict）**：§2 选择器表末行「工具类」的类名列仍列 `.text-s`（该行本义为骨架工具类罗列，④ z[154] 确在使用），但来源列标「ColorUI 全局（page-frame.html）」与死类事实相悖；依赖全局类清单与增删说明已明确其为「使用处无样式」死类，还原以该清单为准，不传导还原行为，留验收知情。
 
 **结论（第二轮）**：对账通过（PASS），frontmatter 状态改「对账通过（待验收）」。PROGRESS.md 仍按约定待用户验收后由主流程更新，本次未动。
@@ -557,5 +557,5 @@ bindtap×6（W:427/665/733/754/794/1012）+ bind:tap×6（W:442/552/584/774/965/
 3. **进度环 CSS 兼容性（未验证）**：`.progress-fill` 的 clip-path 使用 `calc()+cos()/sin()` 三角函数与 `--progress` CSS 变量（X:358），纯静态分析未做真机/低版本基础库验证；`transition: clip-path .3s` 的实际动效同未验证。
 4. **死代码 / 冗余清单**：data 的 `quizList`/`speakList` 永不写入且节点树 0 引用；`editTask`、`showHistoryData` 两方法零调用；`tui-loadmore` 组件注册未使用；`total` 初始值双写（字面量 1 被覆盖为 0，最终 0）；`progress` 初始 `"66%"` 疑调试遗留。还原时可省略，但需知情。
 5. **calcStarNumber 参数分组**：编译产物 z[101]=W:120 的实参为嵌套 op5 包装（`calcStarNumber(<op5(citem.quiz)>, citem.speak)` 形态），参数序按 wxs 签名 `(quiz, speak)` 还原（app-service.js:1386 签名实测）；分组细节待对账员终审。
-6. **行数口径**：W `wc -l`=1222 / `grep -c ""`=1223（末尾空行）；A=399 行（Page 主体 A:398 单行 15673 字节）；X=385 行。
+6. **行数口径**：W `wc -l`=1222 / `grep -c ""`=1223（末尾空行）；A=399 行（Page 主体 A:398 单行 15673 字符（16201 UTF-8 字节数））；X=385 行。
 7. **流程状态**：本 spec 为蒸馏工产出，PROGRESS.md 按约定待对账员通过后更新；本岗位未触发动态采集（unpacked/ 材料完整）。

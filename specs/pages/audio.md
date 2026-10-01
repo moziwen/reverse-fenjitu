@@ -46,7 +46,7 @@ view.tui-safearea-bottom                               (op22)
 
 ## 2. 样式规格
 
-来源：`wxss_out/pages__audio__audio.wxss`（22497 字节；行号为该文件内行号；数值直接当 px，不除 2）
+来源：`wxss_out/pages__audio__audio.wxss`（22,497 字节/文件大小实测吻合；多行文件，行号为该文件内行号；数值直接当 px，不除 2）
 
 | 类名 | 关键样式 | 用途 |
 |---|---|---|
