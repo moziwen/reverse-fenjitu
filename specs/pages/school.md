@@ -179,6 +179,8 @@ wxss 中大量节点树未引用的类（X:7-9/23/25/27-33/34-79 区域的 word-
 | splitWords | 瀑布流分列：`Array.from({length:columnCount||2})`，按 `下标 % columnCount` 轮转分桶（**非按高度/顺序填充**），setData wordColumns | A:100 |
 | getUserSchoolData | `collection("user_school").where({baby_id, unit_id:currentUnitId}).get()` → 有数据：以 data[0].words 建 Map(id→记录)，currentWords 逐词 `map.get(id) || 浅拷贝原词`，setData unitStar=data[0].unitStar + 覆盖 currentWords → splitWords()；无数据：setData unitStar:0 | A:100 |
 | updateWords | **仅当 currentUnitId==="unit_6_60"**：逐词 `collection("words").where({name:word}).get()`，命中则 setData currentWords[n].id=data[0]._id、.audio=data[0].audio_en、.img=data[0].img、.zh=data[0].zh；**2 秒后（setTimeout 2e3）无条件**调云函数 updateUserSchool 回写 currentWords。⚠ 疑似调试遗留代码（硬编码单单元 + tag:"test" + console.log("333",...)），复现时建议整段跳过并在代码注释标注 | A:100 |
+
+> 【待裁决 2026-10-02】gifClick 触发链断裂与 updateWords(tag:"test") 调试遗留，验收裁决：还原时跳过，维持 spec 建议；是否彻底剔除待还原仓实装时最终确认。
 | bindAudio | `wx.createInnerAudioContext()`，onPlay/onStop 仅 console.log，onEnded→handleAudioEnd，onError→toast「播放音频出错」 | A:100 |
 
 ### 云函数调用清单（wx.cloud.callFunction，A:100 全行仅 1 处）

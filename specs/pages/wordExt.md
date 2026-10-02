@@ -9,7 +9,7 @@ chunk: chunk_48.webview.js / chunk_48.appservice.js
 # 页面还原规格：单词卡（单词扩展学习页）
 
 > 本文件由蒸馏工产出，每条结论必须带证据。前端 page-restorer 只读本文件写码。
-> 逻辑源 `chunk_48.appservice.js` 的 `define("pages/wordExt/wordExt.js")` 整段压缩于 **L57 单行**（约 12K 字符）；节点树源 `chunk_48.webview.js` 的 `$gwx_XC_43`（定义 L1，注册 L165，渲染函数 m0 在 L73-142）。
+> 逻辑源 `chunk_48.appservice.js` 的 `define("pages/wordExt/wordExt.js")` 整段压缩于 **L57 单行**（约 12K 字符）；节点树源 `chunk_48.webview.js` 的 `$gwx_XC_43`（定义 L1，注册 L143，渲染函数 m0 在 L73-142）。
 
 ## 0. 页面数据（data 初始值）
 
@@ -204,6 +204,7 @@ L75  view.tui-banner-swiper                          (z[0] L19)
 - [x] 事件与云函数调用清单齐全 —— 22 个函数（onLoad/onUnload/initAudio/getCardList/getListNoExtend/getWordList/getWordCover/getDatabaseLevel/playAudio/changeImage/onShareAppMessage/onShareTimeline/getWordNum/clickAdd/downloadWordPoster/extractString/drawCanvas/getTodayDate/downloadFile/wrapText/savePoster/closePoster）全部在 L57 验证存在；`grep -c callFunction` → 1，name 仅 `updateUserStudy`；集合 words×3 / user_study×2 与 spec §3 清单一致；海报绘制全部参数（d=a-90、rgba(0,0,0,0.3)、16px@24,38、9px@24,56、42px@i/2,.7*d、音标+.7*d+35、白条 fillRect(0,d,i,90)、12px@20,d+35、11px@20,d+60、二维码 drawImage(o,i-60-20,d+15,60,60)、500ms 后 canvasToTempFilePath、downloadFile 仅 200 resolve、pixelRatio 缩放）逐项 PASS；三处疑似 bug/死代码（getDatabaseLevel 读 `this.level` 且 `this.level=` 0 处赋值、prompt 三目取值未上画布、getTodayDate/wrapText 定义未被调用）全部按原文证实。
 - diff 摘要（3 处，均为行号/出处标注口径，不动结论）：
   1. **头注行号**：spec 称 $gwx_XC_43「注册 L165」——实测 `e_[x[0]]={f:m0,...}` 在 **L143**；L165 是 `}(__g.a,...)` 闭包调用与 `__vd_version_info__.delayedGwx` 行。建议头注改为「注册 L143」。
+   → 已采纳：头注改为注册 L143（2026-10-02 第四批验收后小修）。
   2. **§1 树中 wx:if/wx:for 区间行号**：spec 标 wx:if「L98-114」——实测 `if(_oz(z,14,...)` 在 **L100**（L98 是 `var oFOD=_v()`），闭合 `}` L114 属实；wx:for 标「L78-95」中 `_2z` 实在 L95、区间起点 L78 是 `var fIOD=_v()`。区间口径偏宽 2 行，树内容本身无误。
   3. **§2 全局类 .bg 出处**：spec 称 `.bg` 定义在 page-frame.html 全局 setCssToHead——实测 page-frame.html 中 `.bg-img{`（background-attachment:fixed...）与 `.text-white{color:var(--white)}` 均找到，但**独立的 `.bg{` 类定义 0 处**（全部 19 处 `bg{` 前缀均为 thorui-__bg/bg-img/bg-white 等），`unpacked/__extended__/` 全目录亦无。节点树 z[8]='bg bg-img' 中类名「bg」本身属实，但其样式来源存疑（可能依赖 .bg-img 的 background-position 承载，或该类为无效类名）。前端还原时以 .bg-img 为准即可，「.bg 有全局定义」一句建议改为「.bg 未在 page-frame.html 检出独立定义，疑似无效挂名」。
 

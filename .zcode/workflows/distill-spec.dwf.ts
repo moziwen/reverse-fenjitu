@@ -25,6 +25,8 @@ const extract = await agent('解包工').ask<ExtractResult>(
 1. 用 Grep 在 ${repo}/unpacked/chunk_*.webview.js 中定位包含 './pages/${page}/${page}.wxml' 的 chunk 文件。
 2. 从该 chunk 的 $gwx 节点树提取页面骨架（类名/文案/事件），从对应 appservice chunk 提取逻辑与云函数调用清单，
    从 wxss_out 提取该页样式，从 app-config.json 确认导航栏配置（custom 还是系统栏、标题）。
+   ⚠ 硬规则（AGENTS.md）：骨架只认 webview 富树 $gwx_XC_NN；appservice 里可能内嵌同名稀疏 $gwx 副本（仅 ~40 条 ops），
+   严禁作为骨架依据——核对前先确认 chunk 来源是 webview 侧。
 3. 若 unpacked/ 为空（尚未解包），不要编造：返回 notes 字段说明缺失，其余字段留空。
 所有结论必须带文件+行号证据。`
 )
