@@ -38,6 +38,7 @@
 | 结论类型 | 唯一权威 | 备注 |
 |---|---|---|
 | 页面骨架/类名/文案/事件 | `chunk_NN.webview.js` 的 `$gwx_XC_NN` | `_mz` 属性索引坑见 SKILL.md |
+| ⚠️ 骨架只认 webview 富树 | 同上 | **appservice 里可能内嵌同名稀疏 `$gwx` 副本（仅 ~40 条 ops），严禁作为骨架依据**——unitQuiz 页曾因此误读返工两轮（2026-10）。核对前先确认 chunk 来源是 webview 侧 |
 | 样式数值 | `wxss_out/pages__*.wxss` | 数值直接当 px 抄，不再除 2 |
 | 导航栏 | `app-config.json` | custom 还是系统栏、标题文案 |
 | 页面逻辑/云函数 | `chunk_NN.appservice.js` | 函数名=云函数名 |
