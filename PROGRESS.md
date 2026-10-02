@@ -39,5 +39,5 @@
 | unitQuiz（489 新增） | ✓ | ✓ | ✓ | |
 | unitStudy（489 新增） | | | | |
 | vip | ✓ | ✓ | ✓ | |
-| jigou | | | | |
+| jigou | ✓ | ✓ | ✓ | |
 | member | ✓ | ✓ | ✓ | |

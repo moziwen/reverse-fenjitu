@@ -104,6 +104,8 @@
 | updateVirtualVIP | — | POST /api/v1/pay/virtual-callback | 虚拟支付成功回写 VIP | member | 已验证 |
 | handleDeliverGoods | — | POST /api/v1/pay/deliver | 虚拟支付发货（按 outTradeNo） | member | 已验证 |
 | updateMemberVip | vipAdd（member 侧） | POST /api/v1/member/vip | 支付成功会员开通（与 index 侧四分支同一端点） | member | 已验证 |
+| checkJigou | init / bind / addGroup / remove / group | POST /api/v1/jigou/account | 机构账号五操作（列表/绑定/入班/移除/分班） | jigou | 已验证 |
+| updateUserPlan | add / update（jigou 侧） | POST /api/v1/plan | 绑定会员自动开学习计划（⚠ update 分支 plan_id/bind_plan 混用 quirk 原样记录） | jigou | 已验证 |
 | updateUserSchool | updateWordStar | POST /api/v1/school/word-star | 单词星级 | unit | 已验证 |
 | updateUserSchool | updateUnitWords | POST /api/v1/school/unit-words | 单元词星覆盖 | unit | 已验证 |
 | updateUserSchool | （直连 add） | POST /api/v1/school/units | 新建课内学习记录 | unit | 已验证 |
