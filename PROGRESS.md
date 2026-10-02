@@ -40,4 +40,4 @@
 | unitStudy（489 新增） | | | | |
 | vip | | | | |
 | jigou | | | | |
-| member | | | | |
+| member | ✓ | ✓ | ✓ | |

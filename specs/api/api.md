@@ -98,6 +98,12 @@
 | updateUserSchool | test | POST /api/v1/school/words-backfill | unit_6_60 扩展词回填（疑似调试遗留，2s 后无条件触发） | school | 已验证 |
 | updateMemberVip | vipNeedPay / vipExpire / vipAdd / vipUpdate | POST /api/v1/member/vip | 会员状态四分支（试用限额/到期/购买/续费） | index | 已验证 |
 | getPhoneticMap | — | POST /api/v1/config/phonetic-map | 音标映射表版本号缓存（init 集合 phonetic_config） | index | 已验证 |
+| getSessionKey | — | POST /api/v1/pay/session-key | wx.login code 换 sessionKey（虚拟支付签名前置） | member | 已验证 |
+| payOrder | — | POST /api/v1/pay/order | 微信支付下单（money 单位分，tag=时间戳），成功后 requestPayment+轮询 | member | 已验证 |
+| generateVirtualPaySign | — | POST /api/v1/pay/virtual-sign | 虚拟支付签名（offerId 1450483660，outTradeNo=fenjitu_+ts） | member | 已验证 |
+| updateVirtualVIP | — | POST /api/v1/pay/virtual-callback | 虚拟支付成功回写 VIP | member | 已验证 |
+| handleDeliverGoods | — | POST /api/v1/pay/deliver | 虚拟支付发货（按 outTradeNo） | member | 已验证 |
+| updateMemberVip | vipAdd（member 侧） | POST /api/v1/member/vip | 支付成功会员开通（与 index 侧四分支同一端点） | member | 已验证 |
 | updateUserSchool | updateWordStar | POST /api/v1/school/word-star | 单词星级 | unit | 已验证 |
 | updateUserSchool | updateUnitWords | POST /api/v1/school/unit-words | 单元词星覆盖 | unit | 已验证 |
 | updateUserSchool | （直连 add） | POST /api/v1/school/units | 新建课内学习记录 | unit | 已验证 |
